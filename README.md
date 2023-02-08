@@ -22,3 +22,8 @@ Dentro da pasta `server.js`
 ```
 http.createServer([options][, requestListener])
 ```
+
+- função `.listen` direciona uma porta para ser "escutada", quando executada no host cair aqui dentro do server.js (por exemplo). - doc
+- `.writeHead` passando qual status da aplicação. 
+- `'Content type': 'application.json'` informando qual tipo de retorno será entregue na req. (formato json)
+- `.end` o que de fato envia
