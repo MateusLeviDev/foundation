@@ -1,7 +1,8 @@
 # node-restapi-express
 Node é composto por pacotes de módulos. 
 Material de estudo Node.js. Trabalhando com seus principais frameworks e banco de dados tanto SQL quanto NoSQL. <br>
-Criaçao de aplicações variadas com node.js
+Criaçao de aplicações variadas com node.js. <br>
+> Entendo que uma das escolhas mais importantes pra definir a arquitetura de um projeto, principalmente no back-end, é se a aplicação é fácil para se testar. Uma aplicação que existe a simplicidade de escrever novos testes automatizados, principalmente testes que estão na base da pirâmide, como o testes unitários. Determinando assim bons padrões de projeto, assim como arquitetura. Primeiramente, o estudo é focado na construção de APIs testáveis, começando por uma das camadas mais importantes da aplicação, que é a camada de domínio. Pensando na aplicação desaclopada de qualquer framework ou lib http, focando em regras de negócio, aplicando testes encima disso, seguido da conexão de frameworks (nest, adonis, express), banco de dados, seja utilizando um orm...
 
 # `trabalhando com módulos`
 Divisão da aplicação em partes. 
