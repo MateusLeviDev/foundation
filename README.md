@@ -34,3 +34,4 @@ Imaginando a aplicação de uma maneira que as regras de negóco estejam "isolad
 
 ## `Trabalhando maneiras de "pensar" as entities da aplicação `
 As entities da aplicação, geralmente quando pensamos elas conectadas com uma DB, é de uma maneira de como elas devem ser armazenadas, embora muitas vezes isso ocorre, não necessariamente é a melhor forma de lidar com essas entities a nível de código. Exemplificando, imagine uma tabela padrão "user", esse user pode ter mais de um endereço, sendo feito uma tab "address", criando um relacionamento de muitos pra um. Dentro do código, trabalhar com entities diferentes para user e address pode ser definido dentro da própria classe, instância, do obj "user", sem precisar ter duas entities separadas. 
+
