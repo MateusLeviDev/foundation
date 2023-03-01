@@ -1,8 +1,8 @@
 // padrão de classes
 interface AppointmentProps {
   customer: string;
-  statAt: Date;
-  endAt: Date;
+  startsAt: Date;
+  endsAt: Date;
 }
 
 export class Appointment {
@@ -12,12 +12,12 @@ export class Appointment {
     return this.props.customer;
   }
 
-  get startAt() {
-    return this.props.statAt;
+  get startsAt() {
+    return this.props.startsAt;
   }
 
-  get endAt() {
-    return this.props.endAt;
+  get endsAt() {
+    return this.props.endsAt;
   }
 
   constructor(props: AppointmentProps) {
