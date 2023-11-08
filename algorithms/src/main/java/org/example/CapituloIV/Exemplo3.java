@@ -2,6 +2,11 @@ package org.example.CapituloIV;
 
 import java.util.Scanner;
 
+/**
+ * Author: mateus levi souza
+ * 11/23
+ * book: algoritmos 29ª edição - josé augusto e jaya figueiredo
+ */
 public class Exemplo3 {
     public static void main(String[] args) {
         System.out.println("=============================");
