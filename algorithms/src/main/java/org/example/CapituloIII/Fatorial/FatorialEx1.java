@@ -1,4 +1,4 @@
-package org.example.CapituloV.Fatorial;
+package org.example.CapituloIII.Fatorial;
 
 import java.util.Scanner;
 

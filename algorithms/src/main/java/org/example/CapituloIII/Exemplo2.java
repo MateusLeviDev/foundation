@@ -7,21 +7,25 @@ import java.util.Scanner;
  * 11/23
  * book: grokking algorithms
  */
-public class Exemplo1 {
+public class Exemplo2 {
     public static void main(String[] args) {
         System.out.println("=============================");
         System.out.println("==== iniciando programa ====");
         System.out.println("=============================");
 
-        Scanner scanner = new Scanner(System.in);
-
-        System.out.println(fact(2));
-
-        scanner.close();
+        countdown(10);
     }
 
-    public static int fact(int x) {
-        if (x == 1) return 1;
-        else return x * fact(x - 1);
+    public static int sum(int x) {
+        return sum(x + 1);
+    }
+
+    public static void countdown(int i) {
+        System.out.println(i);
+        if (i <= 0) {
+            return;
+        } else {
+            countdown(i - 1);
+        }
     }
 }
