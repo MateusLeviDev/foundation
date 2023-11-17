@@ -1,3 +1,8 @@
+@author: mateus levi souza
+------- xxxx xx xxx xxxxxx
+
+
+
 Binary search is an algorithm; its input is a sorted list of
 elements (I’ll explain later why it needs to be sorted). If
 an element you’re looking for is in that list, binary search
@@ -35,4 +40,56 @@ Arrays are different. You know the address for every item in your
 array. For example, suppose your array contains five items, and you
 know it starts at address 00.
 Lists are better if you want to insert elements into the middle.
+
+To find the artist with the highest play count, you have to check 
+each item in the list. This takes O(n) time, as you just saw. So 
+you have an operation that takes O(n) time, and you have to do that 
+n times. 
+This takes O(n × n) time or O(n2) time.
+Sorting algorithms are very useful. Now you can sort
+• Names in a phone book
+• Travel dates
+• Emails (newest to oldest)
+
+`Selection sort is a neat algorithm, but it’s not very fast. 
+Quicksort  is a faster sorting algorithm that only takes O(n log n) 
+time. It’s coming up in the next chapter!` 
+	
+recursion
+==============
+
+def look_for_key(main_box):
+  pile = main_box.make_a_pile_to_look_through()
+  while pile is not empty:
+    box = pile.grab_a_box()
+    for item in box:
+      if item.is_a_box():
+        pile.append(item)
+      elif item.is_a_key():
+        print “found the key!”
+
+The second way uses recursion. Recursion is where a function calls 
+itself.
+Both approaches accomplish the same thing, but the second approach
+is clearer to me. Recursion is used when it makes the solution 
+clearer. There’s no performance benefit to using recursion; in fact,
+loops are sometimes better for performance. I like this quote by 
+Leigh Caldwell on Stack Overflow: “Loops may achieve a performance 
+gain for your program. Recursion may achieve a performance gain for 
+your programmer. Choose which is more important in your situation!”1
+Many important algorithms use recursion, so it’s important to
+understand the concept.
+
+* the stack
+This data structure is called a stack. The stack is a simple 
+data structure. I’ve been using a stack this whole time 
+without realizing it.
+
+• Recursion is when a function calls itself.
+• Every recursive function has two cases: the base case
+and the recursive case.
+• A stack has two operations: push and pop.
+• All function calls go onto the call stack.
+• The call stack can get very large, which takes up a lot of 
+memory.
 
