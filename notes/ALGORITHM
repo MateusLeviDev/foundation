@@ -93,3 +93,11 @@ and the recursive case.
 • The call stack can get very large, which takes up a lot of 
 memory.
 
+quicksort
+==============
+
+divide and conquer 
+Quicksort is a sorting algorithm. It’s much faster than selection 
+sort and is frequently used in real life. For example, the C 
+standard library has a function called qsort, which is its 
+implementation of quicksort. Quicksort also uses D&C.

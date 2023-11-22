@@ -1,0 +1,121 @@
+@author: mateus levi souza
+------- xxxx xx xxx xxxxxx
+
+
+What is the pillar os oops concept -------------------------
+* encapsulation: means binding all fields as a single entry. 
+define some rules. you need to define all the attributes as
+private and use all public exposed method which is GETTER &
+SETTER method
+
+*inheritance: we use to reuse all the property os parent in 
+our child 
+class -> interface implements 
+class -> class extends 
+interface -> interface implements 
+
+*polymorphism: single with multiple implementation, basically 
+overloading and overriding 
+
+*obstruction: hidden the implementation to the end user give 
+them only the functionally 
+
+where did you use this concepts in you project
+==============
+
+- we use *encapsulation* in real time in one of our domain or
+dto classes.
+whoever want to access this item he need to create the object
+of it and he needs to call this.
+
+- *inheritance* 
+service -> serviceImpl
+
+- *polymorphism* 
+overloading: having the same method signature but the argument
+is different. 
+
+public Item addItem(item item);
+public Item addItem(List<Item> item);
+
+overriding: its means we're just accessing the property of our
+parent. so overriding always happen in different class if that
+those class have the inheritance. purpose of using this overriding
+to reuse the property.
+
+public class A{}
+public class B extends A{}
+real time polymorphism
+
+@Override
+public A addItem(Item item) {
+	return null
+}
+
+@Override
+public B addItem(Item item) {
+	return null
+}
+
+because B is a subclass of A. this is one of the tricky scenario
+you can find in the interview. so in the implementation you can
+return child object of it.
+
+back to the controller you can inject the interface right. that's 
+what the dynamic polymorphism or run time polymorphism. 
+
+@Override
+private UserService service;
+
+-> now we have only service IMPL 1 on i can have IMPL 2. <-
+
+explain exception hierarchy in inheritance  
+==============
+
+if my parent class throws some exception, is it 
+mandatory that my child nedd to handle this?
+
+- no. if you go to this clild there is no compilation error even 
+though (embora) parent is throwing the exception. so i can add the 
+exception or not. 
+- if my child is throwing the exception my parent must need throw it
+too
+
+parent child overriding scenario
+==============
+
+is also one tricky question we can consider. 
+if we override the method and create the object of parent new child
+and call the method. this m method will call from the parent class 
+
+public class Child extends Parent {
+	@Override
+	public void m1() {
+		System.out.println("child m1")
+	}
+	
+	public static void main (String[] args) {
+		Parent parent = new Child;
+		parent.m1();
+	}
+}
+
+people are assuming that this is the object of you parent class
+the output will be
+
+		child m1
+		
+is executing from our child class because we override it from the 
+parent. with the reference of parent we are creating the object of
+child that's whu we are able to access this method from the child 
+class. so lets assume i did not override 
+if we run it now 
+
+		parent m1()
+		
+thats what the override and or we can say run time polymorphism.
+
+start 12:00
+
+
+
