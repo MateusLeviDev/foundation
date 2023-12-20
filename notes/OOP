@@ -115,7 +115,17 @@ if we run it now
 		
 thats what the override and or we can say run time polymorphism.
 
-start 12:00
+can we override static and private method?
+==============
+
+- No. We cannot override static and private method. 
+if something is common for all the implementation better to keep that
+as a static in your interface
 
 
 
+Objects
+==============
+
+Real world objects. they have two major components: state and behavior.
+for an ant, the state might be.
