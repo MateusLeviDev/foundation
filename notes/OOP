@@ -129,3 +129,30 @@ Objects
 
 Real world objects. they have two major components: state and behavior.
 for an ant, the state might be.
+
+Constructor
+==============
+
+A constructor is used in the creation of an object. Thats is a instance of
+a class. 
+You never include a return type from a constructor, not even void. You should
+specify an appropriate access modifier, to control who should be able to create 
+new instances of the class.
+Default constructor is generate during the compilation process 
+
+- if a class contains any other constructor declarations, then a default 
+constructor is NOT implicitly declared. 
+
+Record
+==============
+
+generated code that java provides. 
+public record LPAStudent(String id, String name, String classList) {}
+
+- the field is declared private and final.
+
+POJO vs. Record 
+
+- if you want to modify data on your class, you won´t be using the record. 
+- if you're reading a whole lot of records, from a database or file source,
+and simply passing this data around, then the record is a big improvement. 
