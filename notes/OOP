@@ -2,13 +2,13 @@
 ------- xxxx xx xxx xxxxxx
 
 
-What is the pillar os oops concept -------------------------
+What is the pillar of oops concept -------------------------
 * encapsulation: means binding all fields as a single entry. 
 define some rules. you need to define all the attributes as
 private and use all public exposed method which is GETTER &
 SETTER method
 
-*inheritance: we use to reuse all the property os parent in 
+*inheritance: we use to reuse all the property of parent in 
 our child 
 class -> interface implements 
 class -> class extends 
@@ -17,7 +17,7 @@ interface -> interface implements
 *polymorphism: single with multiple implementation, basically 
 overloading and overriding 
 
-*obstruction: hidden the implementation to the end user give 
+*abstraction: hidden the implementation to the end user give 
 them only the functionally 
 
 where did you use this concepts in you project
@@ -61,6 +61,8 @@ because B is a subclass of A. this is one of the tricky scenario
 you can find in the interview. so in the implementation you can
 return child object of it.
 
+- "If you're returning any parent object as a return type in you interface or class then in your implementation you can return child object of it"
+
 back to the controller you can inject the interface right. that's 
 what the dynamic polymorphism or run time polymorphism. 
 
@@ -73,7 +75,8 @@ explain exception hierarchy in inheritance
 ==============
 
 if my parent class throws some exception, is it 
-mandatory that my child nedd to handle this?
+mandatory that my child need to handle this? 
+- "No. Note if parent is throwing the exception then it is optional for child."
 
 - no. if you go to this clild there is no compilation error even 
 though (embora) parent is throwing the exception. so i can add the 
