@@ -1,0 +1,20 @@
+use std::io;
+
+fn convert_to_int(data_input: & String) -> i32{
+    let x = data_input.trim().parse::<i32>().unwrap();
+    x
+}
+
+fn main() {
+    let mut number_one = String::new();
+    io::stdin().read_line(&mut number_one).expect("ERROR");
+
+    let mut number_two = String::new();
+    io::stdin().read_line(&mut number_two).expect("ERROR");
+
+    if convert_to_int(&number_one) > convert_to_int(&number_two) {
+        println!("Number {} > number {}", number_one, number_two);
+    } else {
+        println!("Number {} <= {}", number_one, number_two);
+    }
+}
