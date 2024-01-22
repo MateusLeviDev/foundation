@@ -159,3 +159,76 @@ POJO vs. Record
 - if you want to modify data on your class, you won´t be using the record. 
 - if you're reading a whole lot of records, from a database or file source,
 and simply passing this data around, then the record is a big improvement. 
+
+Which is good to store password in java string or char[]?
+- since strings are immutable in java if you store the password as plain text 
+it will be available in memory until the Garbage Collector clears it and also
+string literal is stored string pool for reusability there is a pretty high 
+chance that it will remain in memory for long duration 
+- its difficult to destroy literal from SCP as GC unable to perfom cleanup
+activity in SCP only it will destroy once jvm restarted 
+- sicne anyone who has access to memory dump can find the password
+
+List()
+==============
+
+represent an sequenced or ordered group of elements.
+- Elements in List can be inserted, updated, or retrieved by their position or 
+index. Index or position value starts from 0
+LinkedList examples 
+
+Set()
+==============
+
+A set represents a group or collection of items. Set has a special property that 
+is unique items, it can not contain a duplicate item or element. It extends the 
+collection interface.
+
+Map()
+==============
+
+A map in java, not extends the Collection interface. It represents a group of special 
+elements or objects. Every map element or object contains key and value pair. A map 
+can’t contain duplicate keys and one key can refer to at most one value.
+
+
+    Use Set: If you need group of unique elements.
+    Use List: If get operations are higher than any other operation.
+    Use Map: If objects contains the key and value pair.
+
+List               Set              Map
+
+ArrayList    HashSet             hashMap
+LisnkedList  LinkedHahSeh        LinkedHashMap
+             TreeSet             TreeMap
+CopyOnWriteArrayList    CopyOnWriteArraySet          ConcurrentHashMap
+
+Difference between list and set
+- List will allow us to duplicate elements
+- set will not allowed to store duplicate objects
+- list works on index base where set works on based on the hash
+- access the element using the index list and set is used to design a collection
+of distant element.
+
+Difference between ArrayList and LinkedList
+impl of the list interface
+- arrayList used a dynamic array to store the elements, linked internally uses a
+doubly linked to store the elements
+- manipulation with linked is faster that arrayList 'cause it uses a doubly linked
+list, no bit shifting is required in memory
+linked list is better for manipulating data, arrays is better to storing and accessing data
+Linked already maintain the node reference of previous and next
+
+ArraysList arrList = new ArraList<String>(); -> directly using the ArrayList impl
+
+ArrayList<String> str = new ArrayList<>(); -> using the interface, dynamic poly, ref of a list
+
+final field in List, set, map...
+- even though we declare it is final we can modify it thereisnt immutable
+still can modify but we cannot reassing this list, cannot create another
+object, but can modify, adding elements
+
+- if you are using set with any primitive then its fine you dont need to override equals and hash
+but you must with wrapers and customObject
+
+
