@@ -8,7 +8,7 @@ int main()
     int result = 0;
 
     // 0000 1110
-    result = a & b; //14
+    result = a & b; //14    
     result = a | b; // 0001 1111 ¨
     result = a ^ b; // 0001 0001 
     result = ~a; // -31 ¨ - how about the negative product 
@@ -16,6 +16,7 @@ int main()
     result = a >> 2; // 111 rs rs rs rs 
 
     result = b << 1; // 0001 1110 -> 30
+    
 
     printf("%d\n", sizeof(b)); //4 bytes - each byte has 8 bitsexit
 
