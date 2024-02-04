@@ -1,0 +1,88 @@
+@author: mateus levi souza
+------- xxxx xx xxx xxxxxx
+
+
+
+Example building my own image with a Dockerfile ===============
+
+FROM node -> we're telling docker: in my image i wanna start pulling 
+that node image
+
+next, which files should go into the image
+COPY . /app
+
+pt-br: basicamente específica dois caminhos nesse trecho. dessa forma,
+o primeiro caminho é o caminho fora do container, fora da imagem de onde
+saem os arquivos que devem ser copiados into the image [nessa parte 
+'exclui'], ele não conta com o dockerfile. Ou seja, esse primeiro 
+caminho 'mostra' ao docker que todas as pastas e subpastas e arquivos 
+devem ser copiados para o DMH.
+
+o segundo caminho é o caminho dentro da imagem onde os arquivos devem ser
+armazenados. podemos nomear com o nome que quisermos. 
+
+- cada imagem e também para cada container criado a partir de uma imagem
+possui seu próprio sistema de arquivos interno que é totalmente dff dos
+arquivos da nossa máquina
+- nao usar o root path do nosso docker container e nomear por ex: /app
+
+
+next step we need to run npm install, for node applications, like the example
+
+RUN npm intall
+
+bizu:
+precisamos indicar que os comandos subsequentes serão executados dentro dessa
+pasta /app
+
+by default all those commands will be executed in the working directory of
+our docker container and image. and by default, that working directory is 
+the root folder in that container file system.
+como estou copiando para o /app tb quero que a instalação do npm seja executada 
+dentro do /app. usamos
+
+WORKDIR /app -> before COPY AND RUN
+
+bizu:
+a imagem deve ser o template para o container. a imagem não é o que será executado
+o que será executado será o container baseado na respectiva imagem. ou seja, não 
+é necessário que start do server seja na imagem. devemos instalar todas as 
+dependências lá, ter todo o código. mas só queremos inciar um server se startarmos 
+um container baseado em uma imagem 
+
+dessa forma, ao iniciarmos vários containers em uma imagem, iniciaremos vários node 
+servers
+
+CMD ['node', 'server.js']
+
+cmd -> a dff para o run é que agora nao será executado quando quando a imagem for 
+criada mas quando um container for iniciado com base na imagem 
+
+- um container docker está isolado de nosso ambiente local. portanto, tem sua própria
+rede interna. devemos indica a expose to our local system 
+
+EXPOSE 80.
+
+=======================================================================================
+
+FROM node
+
+WORKDIR /app
+
+COPY . /app
+
+RUN npm install
+
+EXPOSE 80
+
+CMD [ "node" , "server.js" ]
+
+=======================================================================================
+
+docker build . 
+
+temos essa instrução expose 80 em nosso dockerfile, mas precisamos fazer mais
+é basicamente para documentação, indicando quais portas serão expostas pelo container 
+precisamos indicar 
+
+docker container start -p 3000:80 XXX
