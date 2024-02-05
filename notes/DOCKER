@@ -86,3 +86,25 @@ temos essa instrução expose 80 em nosso dockerfile, mas precisamos fazer mais
 precisamos indicar 
 
 docker container start -p 3000:80 XXX
+
+=======================================================================================
+Quando falamos de **Docker estamos falando de isolamento**. Esse isolamento pode ser 
+dividido em duas ideias. Primeiramente a parte do **isolamento** seria processo **lógico** 
+(redes, processos, usuários, outpoint), outro ponto interessante é o **isolamento** 
+referente aos **recursos** (gerenciamento de recursos, CPU, memória, IO de rede ou IO de 
+bloco), uma parte mais física.
+
+Isolamento lógico → names spaces
+
+Isolamento de recurso → sed group (confirmar nome)
+
+every instruction represent a layer in dockerfile
+- image is read-only 
+- a image is built up from mult layers
+- image is locked in, unless rebuilt 
+
+o docker armazena algumas informações em chache. portanto, o docker apenas reconstrói e 
+executa novamente o que precisa ser executado -> um mecanismo muito útil 
+quando uma camada muda, todas as outras são reconstruídas [all layers after the changing layer]
+
+
