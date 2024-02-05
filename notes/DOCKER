@@ -107,4 +107,37 @@ o docker armazena algumas informações em chache. portanto, o docker apenas rec
 executa novamente o que precisa ser executado -> um mecanismo muito útil 
 quando uma camada muda, todas as outras são reconstruídas [all layers after the changing layer]
 
+1ª SUMMARY
+==============
 
+com o docker, tudo gira em torno no nosso código. <code> 
+image -> <code> + <environment> 
+- Docker permite o isolamento de CPU, rede e etc
+- pense imagem como a materialização de um sistema de arquivos
+
+O que é uma imagem: Penso na imagem tentando correlacionar com a POO. A imagem seria como 
+uma classe pai onde os filhos (containers) herdam suas características. Agora de forma mais 
+técnica, ela é a materialização de um sistema de arquivos, onde tem o source code, environment
+e tools. é criado a partir de um dockerfile, por exemplo:
+
+- Uma imagem do CentOS contém um sistema operacional CentOS completo. 
+- A partir de uma imagem pronta podemos ter esse reuso e personalizar o que precisamos (containers)
+
+O que é um container: Ele é basicamente um conjunto de file systems criados a partir de uma imagem.
+é melhor diversificar seu uso, usando mais de , justamente por causa desse isolamento que pode ser 
+diferente para imagem criada  a partir disso, como o uso de nginx é diferente de uma imagem mysql,
+por exemplo.
+
+ou seja, Pense no container como um processo, processo esta na memória do computador. Já a imagem 
+é um arquivo de modelo que contém arquivos e monta o sistema que o container terá acesso criando 
+esse processo.
+Um contêiner é uma instância de uma imagem. Ele é um processo que executa o código da imagem em 
+um ambiente isolado. O contêiner tem seu próprio sistema de arquivos, rede e processos.
+
+=======================================================================================
+
+Managing images and containers
+
+remover imagens e containers.
+- criar um run usando o --rm para remover o contaiiner após stopar
+- entrar no modo interativo -a -i || exec -it 
