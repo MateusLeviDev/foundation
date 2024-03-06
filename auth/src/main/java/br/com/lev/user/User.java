@@ -5,7 +5,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
-@Entity
+@Entity(name = "tbl_users")
 public class User {
 
     @Id
@@ -13,7 +13,7 @@ public class User {
     private Long id;
     private String username;
     private String password;
-    private String role;
+    private String role; //Eg: ADMIN, USER
 
     public Long getId() {
         return id;
