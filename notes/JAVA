@@ -1,0 +1,65 @@
++---------------+
+| java/rust 1.0 |
++---------------+
+
+@author: mateus levi souza
+------- xxxx xx xxx xxxxxx
+
+DATA TYPES
+==========
+ - Primitive
+int, float, double, short, byte, char, boolean, long
+
+ - Non primitive
+String, Array, Class, Interface, Enum, Record
+
+ - Wrapper classes: an object ant that object is of a class called integer
+ and it can contain the value
+ all primitives have a corresponding wrapper class
+
+os wrapper foram introduzidos junto do conceito das collections. Por exemplo
+set, map e etc, cada grupo desses tem suas próprias características e uma das 
+necessidades é que para lidar com eles precisa ser um objeto nao um primitivo. 
+ - a wrapper its adds a few more things to primitive (a primitive doesn't have
+ a behavior, but wrapper class yes, can do certain things)
+ 
+ARRAYS
+==========
+are a data structure that holds a fixed number of elements for the same type
+
+int[] myArray;
+myArray = new int[5];
+
+Copying
+ - muitas pessoas não sabem mas podemos copiar um array
+ int[] array1 = {1,2,3,6}
+ int[] array2 = array1;
+ isso nao funciona se você quer uma cópia desse array1
+ because an array is a reference object that lives in the heap and a array
+ variable is holding a address on the heap
+ 
+ System.arraycopy(array1, 0, array2, 0, 5)
+
+Manipulation 
+sort, fill, binary sort etc
+
+THE STATIC KEYWORD
+==========
+
+used to indicate that a member belongs to the class itself, rather than to
+a class instance 
+ - indicate class level rather than object level
+Global. 
+Why is main static?
+ - if it's not static you're running it on an instance. ok, somebody has to 
+ create that instance then has to be another one. at some point of time some-
+ thing has to be static. the thing that's starts it all has to run without an 
+ instance being created and the first thing has to create the first instance
+
+RECORD 
+==========
+fields are automatically generate as private final
+constructors are automatically generated to initialize all fields
+automatically gets methods like equals, hashCode, toString
+derived from all of the component fields
+
