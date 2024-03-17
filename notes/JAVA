@@ -63,3 +63,38 @@ constructors are automatically generated to initialize all fields
 automatically gets methods like equals, hashCode, toString
 derived from all of the component fields
 
+POPULAR COLLECTIONS TYOES 
+==========
+
+LIST =  you can put, for example, the same student in list multiple times. 
+ - precisam ser do mesmo tipo
+SET = unique values. dont have duplicates 
+MAP = a key value pair. 
+
+COLECTIONS IS A FRAMEWORK is more than a library 
+
+core interfaces, like list, set, map. after that they have specific 
+implementations for the interface ArrayList is a impl for the list
+HashSet is a impl of the set
+
+abstract implementations 
+
+concurrence impl is useful when you are in a multi thread environment by
+default are not thread safe. 
+
+The equals contract 
+reflexivity: an object should be equal to itself
+ Point p1 = new Point(1, 2).
+ sout(p1.equals(p1)) // true
+Symmetry: se x é igual a y, y = x
+Transitivity: x = y, y = z so z =x
+Consistency
+Non-Nullity
+ - Point p1 = new Point(1, 2).
+ sout(p1.equals(null)) // false
+
+Time Complexity: number of operations as a ratio of input 
+O(1) -> constant
+O(n) -> linear 
+O(n ^ 2) -> quadratic
+O(log n) -> logarithmic - useful in binary search - split by 2
