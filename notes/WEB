@@ -1,0 +1,61 @@
++---------------+
+| @author: Levi |
++---------------+
+
+
+
+The three tier architecture 
+==========
+
+CDN -> page load 
+ |
+Browser -> User
+ |
+Back-end Server -> Rest Call
+ |
+DB
+
+O que é uma API Gateway?
+ - gerencia os serviços de uma aplicação. Contexto de Microservices
+ 
+CDN: Stored on multiple servers - in various locations., ou seja ele
+faz cópias da application e envia para diferentes servidores ao redor
+do globo. Quando um usuário faz uma request vai para o servidor mais 
+próximo.
+ - em termos técnicos, traduzido literalmente para o português como 
+Rede de fornecimento, entrega e distribuição de conteúdo.
+
+Uma cópia do main server que contém o main content é geralmente 
+copiado para servidores EDGE, então a request vai para esses servers
+ - Muitas CDNs modernas usam pontos de extremidade de rede (edges) 
+ para fornecer conteúdo de forma eficiente aos usuários finais. 
+ - Tanto a CDN quanto a computação de borda visam reduzir a latência
+ e melhorar o desempenho. 
+ - em termos técnicos: os servidores de Edge são um tipo de dispositivo 
+ que executa o processamento em um local de Edge como um ponto de entrada 
+ para uma rede, para que os usuários possam acessar conteúdo e recursos 
+ como aplicações Web imediatamente.
+
+por exemplo, Serviços oferecidos pela CDN:
+
+    Cache: Os servidores da CDN armazenam em cache cópias de conteúdo estático, 
+    como imagens e scripts, próximas aos usuários para reduzir a latência na 
+    entrega.
+    Roteamento inteligente: A CDN direciona as solicitações dos usuários para o 
+    servidor mais próximo geograficamente, o que reduz a carga nos servidores de 
+    origem e melhora o desempenho da entrega.
+    Otimização de entrega: Além de armazenar em cache, a CDN pode otimizar o 
+    conteúdo para diferentes dispositivos e redes, garantindo uma experiência 
+    de usuário consistente e rápida.
+    Segurança: Muitas CDNs oferecem recursos de segurança, como proteção 
+    contra ataques DDoS e filtragem de tráfego malicioso, ajudando a proteger 
+    os servidores de origem.
+ 
+
+A web request
+==========
+
+O browser (user/client) faz uma request para o DNS (maps projetc name to an IP
+Address. DNS is a aliasing system of domain names to IP)
+
+- CDN thats cached all over the place
