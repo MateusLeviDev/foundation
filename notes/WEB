@@ -9,7 +9,7 @@ The three tier architecture
 
 CDN -> page load 
  |
-Browser -> User
+Browser -> User [não faz parte da tier como um main]
  |
 Back-end Server -> Rest Call
  |
@@ -18,7 +18,7 @@ DB
 O que é uma API Gateway?
  - gerencia os serviços de uma aplicação. Contexto de Microservices
  
-CDN: Stored on multiple servers - in various locations., ou seja ele
+CDN: Stored on multiple servers - in various location, ou seja ele
 faz cópias da application e envia para diferentes servidores ao redor
 do globo. Quando um usuário faz uma request vai para o servidor mais 
 próximo.
@@ -59,3 +59,32 @@ O browser (user/client) faz uma request para o DNS (maps projetc name to an IP
 Address. DNS is a aliasing system of domain names to IP)
 
 - CDN thats cached all over the place
+
+CDN
+==========
+
+- is to improve sites loadtimes
+- uses domain names to select the best server 
+ - tendo em vista a correlação com os EDGES...
+
+O QUE SÃO SERVIDORES EDGES?
+   quando as CDNs (Redes de Entrega de Conteúdo) foram criadas, os servidores 
+de Edge foram desenvolvidos para oferecer conteúdo da Web e de vídeo mais rapidamente, 
+implantando-o próximo dos usuários. uma CDN pode ser considerada uma forma de Edge 
+Computing. Tradicionalmente, as CDNs são criadas com base em servidores convencionais 
+para armazenar dados em cache. No entanto, no mundo atual, se você já estiver em uma CDN 
+e esse fornecedor permitir que você escreva códigos (para interagir com a CDN), essa será 
+uma CDN de Edge Computing. 
+  Computação em nuvem e edge computing são tecnologias diferentes. Elas não são intercambiáveis. 
+Embora a computação em nuvem seja usada para processar dados que não são orientados por tempo, 
+a Edge Computing é usada para processar informações urgentes. Além de ser preferida pela redução 
+de latência, muitas vezes, a Edge Computing é escolhida para locais remotos onde a conectividade 
+é fraca ou limitada e o armazenamento local é necessário.
+  são componentes essenciais de uma CDN. Eles são servidores localizados nas "bordas" da rede.
+CDNs typically only store cached data. Edge networks can both store and process data.
+
+So,
+CDN ate to cache content, load balance (permite que o sistema continue em funcionamento mesmo 
+sobrecarregado, muitas requests) and optmize content delivery, not responsible for user data.
+CDN use the http protocol to optmize content delivery, responsible to transmiting static data
+to web browser (client).
