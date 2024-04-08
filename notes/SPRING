@@ -1,0 +1,82 @@
++---------------+
+| SPRING        |
++---------------+
+
+@author: mateus levi souza
+------- xxxx xx xxx xxxxxx
+
+Spring: provides comprehensive infra support for developing java 
+Spring boot: main project of spring framework que elimina muito código boilerplate
+
+> Why you choose spring boot over spring?
+- No spring boot já temos uma configuração inicial que abstrai muitas configuração que, 
+em contrapartida, no spring framework devemos setar. Por exemplo nas XMLs (DispatcherServlet 
+manualmente) configs, geralmente é criado o Data Source , session factory, o transaction manager. 
+Lembro dos web-info da empresa onde trabalho. Ou seja, podemos considerar algumas dessas 
+configurações um tanto quanto complexas, já no spring boot, por exemplo, para confgurar facilmente 
+o banco de dados, devemos setar suas properties e xml para trabalharmos com o jpa, dessa forma 
+criando uma interface para ele e assim por diante. 
+- Além disso, o Spring Boot facilita a criação de apps stand-alone, com servidores embutidos, 
+ou seja não tendo a necessidade de expotar um jar para add o Tomcat,o que simplifica o processo de 
+implantação. Outra vantagem é a facilidade de integração com outras ferramentas, como o Spring Security 
+e o Thymeleaf, através da configuração automática.
+- No Spring Boot, não há necessidade de usar arquivos WAR porque ele suporta servidores de aplicativos 
+embutidos, como Tomcat, que podem ser empacotados na aplicação. Isso significa que você pode executar 
+sua aplicação como um aplicativo Java autônomo, simplificando o processo de implantação e eliminando 
+a necessidade de um servidor de aplicativos separado. Por outro lado, no Spring Framework tradicional, 
+geralmente você precisa criar um arquivo WAR e implantá-lo em um servidor de aplicativos separado, como 
+o Tomcat ou o Jetty. Isso pode aumentar a complexidade do processo de implantação. o Spring boot fornece
+algumas features como métricas e monitoramento da application  
+
+Como você roda uma aplicação spring boot?
+- Parece bem simples para quem está familizarizado, mas é uma pegadinha. E caso não seja, uma boa resposta 
+ seria pica
+
+- Podemos rodar diretamente pelo main method. 
+
+Existe um plugin mvn fornecido pelo spring 
+
+> mvn springboot::run
+- nele criamos o jar e executa a application
+
+Mas como o comando mvn load o arquivo jar e executa o app? Onde está esse jar?
+
+ - Por padrão, uma app spring gerenciada pelo maven, quando fazemos a build o jar é loaded no package target 
+ (porém ao executar o comando sppringboot::run ele não é encontrado nesse local). Pois bem isso acontece por 
+ que esse comando executa a aplicação diretamente do target under the class, ou seja, é gerado com base na main 
+ app do target, mas se gera-lo será armazenado no mesmo lugar
+
+**@SpringBootApplication**
+
+Contém 
+
+- @SpringBootConfiguration: ele gerencia as configurações extras que criamos @Configuration, permitindo que possamos usar, por exemplo, configs da AWS, ModelMapper, etc
+- @EnableAutoConfiguration: uma das principais features do springboot. Configura vários componentes da aplicação, scaneando as dependencies (para carrgear os respectivos JARs) e class path.
+- @ComponentScan: por padrão ele só executa o package onde está a main class. Se sairmos desses packages e criar uma class com @Component ele não irá carregar a menos que mostremos a aplicação. com:
+
+> (scanBasePackages = “caminho para class”) dentro de **@SpringBootApplication**
+> 
+
+→ fazer um review sobre algums processos usando o modo degub: true
+
+→ quando eu executo os teste na minha aplicação, usando logstash and elastic alguns erros são jogados na 
+tela mas ele não dá um problema em si. Mas posso usar o (exclude = {.class}), excluindo assim uma 
+AutoConfigureClass no applicando spring boot, como exclude um DataSourceAuto…
+
+How Spring boot run() method works internally?
+
+- create application context
+- register bean into context
+
+> é um objeto ConfigurableApplicationContext, ele prepara todo o environment (look into .properties && .yml). 
+objeto environment, por exemplo, podemos achar as configs dos arquivos dentro de propertySources → propertySourceList 
+e lá encontra as properties e yml estabelecidos. Ele lê de ambos. The key point that it creates the application 
+context → createApplicationContext(): ele checa o applicationType, se nao add nenhum será servlet por default, pelo 
+o que entendi. Percorre, ems eguida, dentro de AnnotationServletWebServerApplicationContext() tem-se reader(responsavel 
+pelas annotatedClass um scan diretamente dos basesPackages) and scanner
+
+- kicked up embedded tomcat container to run your jar/war
+
+What is Command line runner in spring boot?
+
+O Command Line Runner é uma interface funcional do Spring Boot usada para executar a lógica de código específica logo após a inicialização da aplicação. Esta interface é usada para desenvolver aplicações específicas onde você gostaria de executar algumas partes do código depois que a aplicação Spring Boot estiver completamente iniciada. Um exemplo comum é a inicialização de um cache ou a execução de uma migração de banco de dados no início da aplicação.
