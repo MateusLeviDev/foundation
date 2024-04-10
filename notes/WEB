@@ -1,15 +1,18 @@
 +---------------+
-| @author: Levi |
+|     WEB       |
 +---------------+
+
+@author: mateus levi souza
+------- xxxx xx xxx xxxxxx
 
 
 
 The three tier architecture 
 ==========
 
-CDN -> page load 
+CDN (Content Delivery Network) -> page load 
  |
-Browser -> User [não faz parte da tier como um main]
+Browser -> User [não faz parte da tier como um main/principal]
  |
 Back-end Server -> Rest Call
  |
@@ -88,3 +91,54 @@ CDN ate to cache content, load balance (permite que o sistema continue em funcio
 sobrecarregado, muitas requests) and optmize content delivery, not responsible for user data.
 CDN use the http protocol to optmize content delivery, responsible to transmiting static data
 to web browser (client).
+
+-----------------------------------------------------------------------------
+
+Como funciona uma CDN?
+Uma rede de entrega de conteúdo depende de três tipos de servidores.
+
+Servidores de origem. Os servidores de origem contêm as versões originais 
+do conteúdo e funcionam como a fonte da verdade. Sempre que for necessário 
+atualizar o conteúdo, serão feitas alterações no servidor de origem. Um 
+servidor de origem pode ser de propriedade e gerenciado por um provedor de 
+conteúdo ou pode ser hospedado na infraestrutura de um provedor de nuvem de 
+terceiros, como o AWS S3 da Amazon ou o Google Cloud Storage.
+Servidores edge. Os servidores edge estão localizados em várias zonas geográficas 
+ao redor do mundo, também chamados de "pontos de presença" (POPs). Eles armazenam 
+conteúdo copiado dos servidores de origem e são responsáveis por entregar esse 
+conteúdo aos usuários próximos. Quando um usuário solicita acesso a conteúdo em um 
+servidor de origem, ele é redirecionado para uma cópia em cache do conteúdo em um 
+servidor edge geograficamente próximo a ele. Quando o conteúdo em cache está desatualizado, 
+ele solicita conteúdo atualizado do servidor de origem. Os servidores edge CDN são 
+de propriedade ou gerenciados pelo provedor de hospedagem CDN.
+Servidores de DNS. Servidores de DNS (Sistema de Nomes de Domínio) controlam e 
+fornecem endereços IP para servidores de origem e de edge. Quando um cliente envia 
+uma solicitação a um servidor de origem, os servidores de DNS respondem com o nome 
+de um servidor de borda emparelhado do qual o conteúdo pode ser servido mais 
+rapidamente.
+
+Para proporcionar a melhor experiência de visualização, as CDNs executam 
+duas funções essenciais.
+
+Redução de latência. A latência é aquele atraso irritante com que você 
+se depara ao tentar acessar uma página da Web ou um streaming de vídeo 
+antes de eles serem totalmente carregados em seu dispositivo. Embora 
+seja medida em milésimos de segundos, pode parecer que ela demora uma 
+eternidade e pode, até mesmo, resultar em um erro de carregamento ou 
+atingir o tempo limite. Algumas redes de entrega de conteúdo aliviam a 
+latência reduzindo a distância física que o conteúdo precisa percorrer 
+para chegar até você. Portanto, as CDNs maiores e mais amplamente 
+distribuídas conseguem entregar o conteúdo da Web de forma mais rápida 
+e confiável, colocando o conteúdo o mais próximo possível do usuário final.
+Balanceamento de cargas. Uma CDN balanceia o tráfego geral para oferecer 
+a todos que acessam conteúdo da Internet a melhor experiência possível na Web. 
+Pense nisso como fazer o roteamento de tráfego no mundo real. Pode haver uma 
+rota que, normalmente, é a mais rápida do ponto A ao ponto B se nenhum outro 
+carro estiver nela. Mas, se começar a ficar congestionada, será melhor que 
+todos os carros que trafegam se espalhem por algumas rotas diferentes. 
+Como resultado, você pode precisar pegar uma estrada que é alguns minutos 
+mais longa (ou milissegundos, quando convertemos isso em velocidades de Internet), 
+mas você não ficará preso no engarrafamento que está se formando na rota mais curta. 
+O balanceamento de carga permite que os provedores de conteúdo lidem com aumentos 
+na demanda e grandes picos de tráfego, ao mesmo tempo em que proporcionam 
+experiências de usuário de alta qualidade e evitam o tempo de inatividade.
