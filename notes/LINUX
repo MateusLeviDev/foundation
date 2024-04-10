@@ -1,0 +1,73 @@
++---------------+
+| LINUX         |
++---------------+
+
+@author: mateus levi souza
+------- xxxx xx xxx xxxxxx
+
+
+Kernel (Núcleo)
+==========
+
+The core of the UNIX system. Loaded at system start up (boot). Memory-resident 
+control program.
+
+- Manages the entire resources of the system, presenting them to you and every 
+other user as a coherent system. Provides service to user applications such as 
+device management, process scheduling, etc.
+
+em poucas palavras, é a matriz de qualquer sistema operacional. Em uma tradução 
+literal do termo, kernel significa núcleo, reforçando sua importância no 
+gerenciamento de informações e processos.
+
+- O kernel do windows, por exemplo, é o NT ou windows NT -
+- É o núcleo ou coração do sistema UNIX.
+- Carregado durante a inicialização do sistema (boot).
+- Permanece na memória durante todo o funcionamento do sistema.
+- Funciona como um programa de controle residente em memória.
+
+Types of Operation System 
+
+- Desktop OS: Microsoft Windows, macOS, Linux such as Ubuntu
+- Server OS: Windows server, Linux distributions like CentOS, RHEL
+- Mobile OS: iOS, Android
+- Embedded OS: Routers, smart TV, auto, home appliance
+- Real-time OS (RTOS): used in medical equipment, aerospace
+- O shell é um interpretador de comandos
+
+Operating system
+==========
+
+An operating system or OS is a software program that enables the 
+computer hardware to communicate and operate with the computer software.
+
+O SO é composto pelo kernel e por programas do sistema. O kernel é o 
+núcleo do sistema operacional, responsável por funções como gerenciamento 
+de processos, memória, drivers de dispositivos de hardware, entre outros. 
+Os programas do sistema utilizam as ferramentas fornecidas pelo kernel 
+para implementar os serviços necessários, enquanto aplicativos são destinados 
+a tarefas específicas do usuário.
+
+A principal distinção entre um sistema operacional e um kernel é se um sistema 
+operacional é apenas um software de sistema que processa os recursos do sistema, 
+enquanto um kernel é um componente crítico (software) dentro do sistema operacional. 
+O kernel serve como um link entre o software e o hardware da plataforma.
+
+An operating system performs these services for applications:
+- In a multitasking operating system where multiple programs can be running at the same time,
+the operating system determines which applications should run in what order and how much
+time should be allowed for each application before giving another application a turn.
+- It manages the sharing of internal memory among multiple applications.
+- It handles input and output to and from attached hardware devices, such as hard disks, printers,
+and dial-up ports.
+- It sends messages to each application or interactive user (or to a system operator) about the status
+of operation and any errors that may have occurred.
+- It can offload the management of what are called batch jobs (for example, printing) so that the
+initiating application is freed from this work.
+- On computers that can provide parallel processing, an operating system can manage how to
+divide the program so that it runs on more than one processor at a time.
+
+também explora o conceito de memória virtual, que é suportada pelo Linux. 
+A memória virtual usa o disco como uma extensão da RAM, permitindo que mais 
+memória seja utilizada. Partes da memória são gravadas no disco quando não 
+estão em uso e podem ser recuperadas quando necessário.
