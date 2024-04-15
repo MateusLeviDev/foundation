@@ -9,6 +9,15 @@
 Kernel (Núcleo)
 ==========
 
+what is, and what does it do?
+The kernel is the special piece of the operating system that controls 
+the CPU hardware, allocates memory, accesses data, schedules processes, 
+runs the applications, and protects them from each other. 
+It is the first program loaded on the computer when the computer starts up. 
+The most critical pieces of code in the kernel are loaded into protected 
+areas of memory so that they can't be overwritten by other applications running 
+in the operating system.
+
 The core of the UNIX system. Loaded at system start up (boot). Memory-resident 
 control program.
 
@@ -48,24 +57,27 @@ Os programas do sistema utilizam as ferramentas fornecidas pelo kernel
 para implementar os serviços necessários, enquanto aplicativos são destinados 
 a tarefas específicas do usuário.
 
-A principal distinção entre um sistema operacional e um kernel é se um sistema 
-operacional é apenas um software de sistema que processa os recursos do sistema, 
-enquanto um kernel é um componente crítico (software) dentro do sistema operacional. 
-O kernel serve como um link entre o software e o hardware da plataforma.
+A principal distinção entre um sistema operacional e um kernel é se um 
+sistema  operacional é apenas um software de sistema que processa os 
+recursos do sistema, enquanto um kernel é um componente crítico (software) 
+dentro do sistema operacional. O kernel serve como um link entre o software 
+e o hardware da plataforma.
 
 An operating system performs these services for applications:
-- In a multitasking operating system where multiple programs can be running at the same time,
-the operating system determines which applications should run in what order and how much
-time should be allowed for each application before giving another application a turn.
+- In a multitasking operating system where multiple programs can be running 
+at the same time, the operating system determines which applications should 
+run in what order and how much time should be allowed for each application 
+before giving another application a turn.
 - It manages the sharing of internal memory among multiple applications.
-- It handles input and output to and from attached hardware devices, such as hard disks, printers,
-and dial-up ports.
-- It sends messages to each application or interactive user (or to a system operator) about the status
-of operation and any errors that may have occurred.
-- It can offload the management of what are called batch jobs (for example, printing) so that the
-initiating application is freed from this work.
-- On computers that can provide parallel processing, an operating system can manage how to
-divide the program so that it runs on more than one processor at a time.
+- It handles input and output to and from attached hardware devices, such as 
+hard disks, printers, and dial-up ports.
+- It sends messages to each application or interactive user (or to a system 
+operator) about the status of operation and any errors that may have occurred.
+- It can offload the management of what are called batch jobs (for example, 
+printing) so that the initiating application is freed from this work.
+- On computers that can provide parallel processing, an operating system can 
+manage how to divide the program so that it runs on more than one processor at 
+a time.
 
 também explora o conceito de memória virtual, que é suportada pelo Linux. 
 A memória virtual usa o disco como uma extensão da RAM, permitindo que mais 
