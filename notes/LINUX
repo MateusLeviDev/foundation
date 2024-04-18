@@ -83,3 +83,23 @@ também explora o conceito de memória virtual, que é suportada pelo Linux.
 A memória virtual usa o disco como uma extensão da RAM, permitindo que mais 
 memória seja utilizada. Partes da memória são gravadas no disco quando não 
 estão em uso e podem ser recuperadas quando necessário.
+
+ What is the Linux kernel?
+ - The kernel is the special piece of the operating system that controls 
+the CPU hardware, allocates memory, accesses data, schedules processes, 
+runs the applications, and protects them from each other. 
+
+What is an operating system?
+ - um OS incui, além do Kernel, uma série de utilitários, bibliotecas, 
+aplicativos e uma interface de usuário. Por exemplo: Windows (Kernel é 
+o Windows NT), Fedora (Kernel Linux). Em resumo, um OS permite a 
+comunicação entre o computer hardware e o computer software. Sem um OS
+o hardware se torna useless. 
+
+What’s the difference between user space and kernel space?
+ - o espaço do usuário é onde os programas de aplicativos são executados, 
+enquanto o espaço do kernel é onde o núcleo do sistema operacional reside 
+e opera, fornecendo serviços essenciais e controlando o hardware do sistema. 
+O acesso e os privilégios no espaço do kernel são mais elevados do que no 
+espaço do usuário, e o kernel geralmente protege o espaço do usuário para 
+garantir a segurança e estabilidade do sistema.
