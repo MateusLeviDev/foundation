@@ -103,3 +103,47 @@ e opera, fornecendo serviços essenciais e controlando o hardware do sistema.
 O acesso e os privilégios no espaço do kernel são mais elevados do que no 
 espaço do usuário, e o kernel geralmente protege o espaço do usuário para 
 garantir a segurança e estabilidade do sistema.
+
+How do I Log In to Linux?
+- you log in to Linux at either the console of the Linux host machine or 
+by remotely connecting to the Linux server over a network. no console, é
+como acessar a máquina virtual diretamente através da interface fornecida 
+pela AWS, por exemplo. login remoto via SSH é feito a partir do seu próprio 
+terminal de linha de comando, como o Terminal no macOS ou o PuTTY no Windows.
+- Most Linux servers are set up to allow users to connect via the network 
+using the Secure Shell (SSH), an encrypted communications protocol.
+- During installation, the root user is created, and you are able to select 
+a password. Post installation, administrators can use the root user account 
+and account management commands to create new user. The “superuser” username 
+in Linux is called “root” because it is the only user that can modify the 
+root directory.
+
+Files and Permissions
+-l /var/log/syslog:
+
+   david@debian:~$ ls -l /var/log/syslog
+   -rw-r----- 1 root adm 9074 May 15 10:17 /var/log/syslog
+
+The file is owned by the user “root” and the group “adm”. The file 
+permissions are “rw” (shorthand for read/write) for the owner and “r” 
+(shorthand for “read”) for the group with no permissions for anyone 
+else. Figure 2-2 shows how file permissions work in Linux.
+
+drwxr-xr-x 1 cumulus cumulus 154 May 16 09:15 cumulus
+
+d – directory
+r – read
+w – write
+x - execute
+
+drwxr-xr-x
+
+In the file permission, a “d” on the left tells you whether you are 
+looking at a directory (or folder). Then the three sets of permissions 
+“rwx, r-x, r-x” say whether you can read, write, and execute (or start 
+the application) at the user level, the group level, and the “everyone 
+else” level (others). The type indicator shown in Figure 2-2 identifies 
+the selected object as a directory, hence the “d” as the type. The two 
+most important types of objects in the Linux file system are directories 
+(“d”) and files (“-”). There are other possible types as well, but for my 
+purposes here, we’ll stick with directories and files.
