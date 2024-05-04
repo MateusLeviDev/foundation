@@ -1,0 +1,16 @@
+When you start up the computer, what is the first thing that happens?
+ - first execute the software that are in the BIOS
+ - check if the system is already to launch
+ - second loaded the boot loader (when the Kernel is loaded)
+ - Once the boot loader has identified and located the operating system kernel on the storage device, it loads the kernel into memory.
+BIOS -> basic input output system. basic a firmware 
+FIRMWARE -> comes default in a computer. a small chip stored in the motherboard. A ROM - read only memory. fornece instruções de baixo nível para o hardware do dispositivo, permitindo que ele execute suas funções básicas.
+BOOT LOADER -> The boot loader's primary task is to locate the operating system kernel (e.g., Linux kernel or Windows kernel) and load it into memory.
+
+What's a File System?
+ - a method or a DS that the OS uses to store and retrieve data in the memory. Most of file system use the concept of directories - also called folders. Everything in linux - even hardware (é representado principalmente por meio do sistema de arquivos virtual /proc e /sys) - is represented in this folder and file structure 
+ - examples: /bin, /sbin, /usr/bin, and /usr/sbin. → Where executable programs are stored. | /etc.  → Where configuration files are stored. | /home. → Where user home directories are stored, one for each user.
+Why is the file system an essential component?
+ - Organização e Estruturação dos Dados, Gerenciamento de Espaço em Disco, Recuperação de Dados e Tolerância a Falhas, etc
+
+Everything in linux is a file, even the commands
