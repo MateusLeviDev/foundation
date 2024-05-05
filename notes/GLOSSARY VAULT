@@ -14,3 +14,14 @@ Why is the file system an essential component?
  - Organização e Estruturação dos Dados, Gerenciamento de Espaço em Disco, Recuperação de Dados e Tolerância a Falhas, etc
 
 Everything in linux is a file, even the commands
+
+What's a server?
+ - um computador ou sistema computacional dedicado. um servidor basicamente consiste em um serviço para responder as solicitações de clientes e prover os recursos necessários para a execução de suas operações.
+
+What's is bare metal?
+ - consiste em um servidor físico dedicado que é provisionado e usado por um único cliente. o cliente tem acesso direto ao hardware subjacente, sem a intermediação de uma camada de virtualização. ainda são uma escolha preferida para muitas empresas e organizações que têm requisitos específicos de desempenho, segurança e controle de hardware.
+
+Virtualization -> essa camada de virtulização se refere ao software (hypervisor) que permite que um único servidor físico seja dividido em múltiplos ambientes virtuais independentes
+Podemos abordar assim os namespaces nos processos de isolamento lógico and o firmware hypervisor que gerencia essas VMs criadas.
+
+CDK x API -> O CDK é ideal para definir e gerenciar infraestrutura na AWS usando código de programação, enquanto a AWS API é usada para interagir diretamente com os serviços da AWS através de solicitações HTTP, com mais controle e flexibilidade, porém com mais complexidade e necessidade de gerenciamento manual.
