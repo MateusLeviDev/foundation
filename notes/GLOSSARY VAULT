@@ -25,3 +25,36 @@ Virtualization -> essa camada de virtulização se refere ao software (hyperviso
 Podemos abordar assim os namespaces nos processos de isolamento lógico and o firmware hypervisor que gerencia essas VMs criadas.
 
 CDK x API -> O CDK é ideal para definir e gerenciar infraestrutura na AWS usando código de programação, enquanto a AWS API é usada para interagir diretamente com os serviços da AWS através de solicitações HTTP, com mais controle e flexibilidade, porém com mais complexidade e necessidade de gerenciamento manual.
+
+chmod -> em sistemas Linux e outros sistemas UNIX são utilizadas para controlar o acesso a arquivos e diretórios por parte dos diferentes usuários do sistema. O comando chmod é usado para alterar essas permissões.
+ - cada arquivo ou diretório em um sistema UNIX possui três conjuntos de permissões
+ 1 - permissões de proprietário, 2 - permissões do grupo e 3 - permissões a outros usuários 
+ - As permissões r, w, e x correspondem a:
+    r (read): Permissão de leitura. Permite visualizar o conteúdo do arquivo ou listar o conteúdo do diretório. -> [4]
+    w (write): Permissão de escrita. Permite modificar o arquivo (editar, adicionar, excluir) ou criar e excluir arquivos em um diretório. -> [2]
+    x (execute): Permissão de execução. Permite executar o arquivo (se for um programa ou script) ou acessar um diretório. -> [1]
+por exemplo: chmod 777 <file> //da todas as permissões a todos; chmod 600 <file> /da permissão ao dono de ler e escrever sobre esse arquivo, mas não executar
+
+Acessar o AWS pelo console, uma possibilidade. Podemos também ter acesso a um servidor EC2 por meio do terminal usando o ssh + <arquivo .pem> nome_servidor@public_IP
+
+Why use shell script?
+ - faster
+ - automations 
+ - GUIs would make servers heavy, so shell commands are used
+ - O uso do shebang é uma maneira conveniente de especificar qual interpretador deve ser usado para executar um script
+ - o shebang permite que você escreva scripts que podem ser facilmente compartilhados e executados em diferentes sistemas Unix-like sem preocupações com a localização específica dos interpretadores nos diferentes sistemas.
+
+Difference between sh and Bash
+O sh e o bash são ambos interpretadores de shell utilizados em sistemas Unix-like
+o sh usa o conceito de fazer redirecionamentos
+For a long time, /bin/sh used to point to /bin/bash on most GNU/Linux systems. As a result, it had almost become safe to ignore the difference between the two. But that started to change recently.
+Some popular examples of systems where /bin/sh does not point to /bin/bash (and on some of which /bin/bash may not even exist) are:
+
+    Modern Debian and Ubuntu systems, which symlink sh to dash by default;
+    Busybox, which is usually run during the Linux system boot time as part of initramfs. It uses the ash shell implementation.
+    BSD systems, and in general any non-Linux systems. OpenBSD uses pdksh, a descendant of the KornShell. FreeBSD's sh is a descendant of the original Unix Bourne shell. Solaris has its own sh which for a long time was not POSIX-compliant; a free implementation is available from the Heirloom project.
+
+Which one to use
+some prefer sh, it is standardized, it is much simpler and easier to learn, it is portable across POSIX systems — even if they happen not to have bash, they are required to have sh
+If you run a script with bash the display way more useful error messages in the case of syntax error. You can simply save time by using bash. 
+em suma, /sh e /bash are the same, sh usa o mesmo conceito de redirecionar para outro shell, como Bash ou Dash. mas nao sao iguais por que alguns OS decidiram usar dash por default. 
