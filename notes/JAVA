@@ -99,6 +99,27 @@ O(n) -> linear
 O(n ^ 2) -> quadratic
 O(log n) -> logarithmic - useful in binary search - split by 2
 
+Space Complexity: A complexidade de espaço de um algoritmo mede 
+a quantidade de memória adicional que o algoritmo necessita para 
+ser executado, além do espaço usado pela entrada. Semelhante à 
+complexidade de tempo, a complexidade de espaço também é expressa 
+em notação Big O.
+
+Diferenças Fundamentais
+
+  O que Medem:
+     Complexidade de Tempo: Mede o tempo de execução do algoritmo.
+     Complexidade de Espaço: Mede a quantidade de memória adicional 
+     necessária pelo algoritmo.
+
+ Relevância:
+     A complexidade de tempo é geralmente mais crítica para a maioria 
+     das aplicações, pois tempo de execução é um recurso escasso.
+     A complexidade de espaço se torna crítica quando a memória é limitada, 
+     como em dispositivos embarcados ou em algoritmos que lidam com grandes 
+     volumes de dados.
+
+
 COLLECTIONS
 ==========
 The list interface
