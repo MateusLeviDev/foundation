@@ -122,3 +122,19 @@ A principal diferença entre uma imagem e um contêiner do Docker é que uma ima
 Uma imagem é um pacote de sistema de arquivos que contém todas as dependências necessárias para executar um processo. Ela inclui o código, as bibliotecas, as dependências e as configurações. Uma imagem é um modelo de um aplicativo ou serviço que pode ser executado em um contêiner.
 Um contêiner é uma instância de uma imagem**. Ele é um processo que executa o código da imagem em um ambiente isolado. O contêiner tem seu próprio sistema de arquivos, rede e processos.
 dessa forma, uma imagem contém 1 ou mais containers
+
+What is DDD?
+consiste no desenvolvimento cujo design é centrado no domínio do negócio. 
+-> permitir o desenvolvimento de sistemas cujo design é centrado em conceitos próximos e alinhados com um domínio de negócio.
+- DDD defende que a separação entre domínio e tecnologia deve ser promovida e expressa na arquitetura do sistema. Para tanto, padrões como Arquitetura em Camadas, Arquitetura Limpa ou Arquitetura Hexagonal podem ser usados. (isso é uma excelente pergunta)
+
+busquei muito entender pelo código, mas seria algo mais filosófico, de fato
+- diminuir a distância entre o que o negócio fala e o que a galera técnica fala. ser algo mais intuitivo.
+- o software se desenvolve no contexto em que estamos inseridos
+
+building blocks -> 
+- Entidades
+- Objetos de Valor
+- Serviços
+- Agregados
+- Repositórios
