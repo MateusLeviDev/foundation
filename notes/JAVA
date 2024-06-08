@@ -37,6 +37,8 @@ Copying
  isso nao funciona se você quer uma cópia desse array1
  because an array is a reference object that lives in the heap and a array
  variable is holding a address on the heap
+ - você está fazendo com que array2 aponte para o mesmo local de memória que 
+ array1
  
  System.arraycopy(array1, 0, array2, 0, 5)
 
@@ -49,12 +51,51 @@ THE STATIC KEYWORD
 used to indicate that a member belongs to the class itself, rather than to
 a class instance 
  - indicate class level rather than object level
-Global. 
+ Global.
+
+Membros Estáticos vs. Membros de Instância -----------------------------------
+
+Membros de Instância:
+
+    Pertencem a uma instância específica da classe.
+    Cada instância da classe possui sua própria cópia dos membros de instância.
+    Exemplos: atributos não estáticos, métodos não estáticos.
+
+Membros Estáticos:
+
+    Pertencem à classe como um todo, não a instâncias individuais.
+    Existe apenas uma cópia de um membro estático, compartilhada por todas as instâncias da classe.
+    Podem ser acessados diretamente pela classe, sem precisar de uma instância.
+exemplo:
+public class Exemplo {
+    static int contador; // Membro estático
+
+    public Exemplo() {
+        contador++;
+    }
+}
+
+Métodos estáticos podem ser chamados sem criar uma instância da classe, útil 
+para utilitários e funções auxiliares. Por exemplo, Math.sqrt() em Java.
+Membros estáticos são carregados na memória uma vez
+
+--------------------------------------------------------------------06/08/2024
+
 Why is main static?
  - if it's not static you're running it on an instance. ok, somebody has to 
  create that instance then has to be another one. at some point of time some-
  thing has to be static. the thing that's starts it all has to run without an 
  instance being created and the first thing has to create the first instance
+
+No momento em que o método main é chamado, nenhuma instância da classe que 
+contém o main foi criada. Isso significa que, se main não fosse static, o 
+runtime precisaria criar uma instância da classe para chamar o método main. 
+No entanto, para criar uma instância, ele precisaria chamar um construtor, 
+e o construtor pode ter dependências ou lógica que necessitam de uma 
+execução anterior, criando um ciclo de dependência complicado.
+O método main é static para que o runtime possa chamá-lo diretamente sem 
+a necessidade de criar uma instância da classe. Isso simplifica o processo de inicialização do programa
+
 
 RECORD 
 ==========
@@ -63,7 +104,7 @@ constructors are automatically generated to initialize all fields
 automatically gets methods like equals, hashCode, toString
 derived from all of the component fields
 
-POPULAR COLLECTIONS TYOES 
+POPULAR COLLECTIONS TYPES 
 ==========
 
 LIST =  you can put, for example, the same student in list multiple times. 
@@ -155,7 +196,7 @@ time complex é O(n) por que ele copiar tudo, é mais que O(1)
 amortized time complex: pois a criação e cópia para o novo array 
 exigem percorrer todos os elementos da lista. 
 Criação de um novo array: Isso tem complexidade de tempo O(n), 
-nde n é o número de elementos na lista, pois todos os elementos 
+onde n é o número de elementos na lista, pois todos os elementos 
 precisam ser copiados para o novo array. 
 é importante destacar que essa eficiência de tempo O(1)O(1) 
 para inserção no final ocorre apenas quando há espaço disponível
