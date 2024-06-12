@@ -1,0 +1,15 @@
++---------------+
+| raNDoM        |
++---------------+
+
+@Mock: Cria um mock (objeto simulado) da classe ou interface anotada.
+Quando você precisa simular o comportamento de dependências para testar a lógica da classe sob teste.
+
+@InjectMocks: Cria uma instância da classe anotada e injeta os mocks criados (anotados com @Mock) nas dependências desta instância.
+
+@BeforeEach: Indica que o método anotado deve ser executado antes de cada método de teste.
+
+@ExtendWith(MockitoExtension.class): Extende a funcionalidade do JUnit 5 com o Mockito. É usada para habilitar o suporte ao Mockito nas classes de teste, permitindo a injeção de mocks e a inicialização correta deles.
+ - SpringExtension.class: É ideal para testes de integração, onde você quer testar a interação entre vários componentes ou testar a aplicação como um todo.
+   Permite o uso de anotações do Spring como @Autowired, @SpringBootTest, @MockBean, etc.
+   integração dos testes com o Spring Framework
