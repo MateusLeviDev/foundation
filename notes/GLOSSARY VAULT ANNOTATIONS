@@ -13,3 +13,8 @@ Quando você precisa simular o comportamento de dependências para testar a lóg
  - SpringExtension.class: É ideal para testes de integração, onde você quer testar a interação entre vários componentes ou testar a aplicação como um todo.
    Permite o uso de anotações do Spring como @Autowired, @SpringBootTest, @MockBean, etc.
    integração dos testes com o Spring Framework
+
+
+cenário de exceptions:
+@JsonInclude(JsonInclude.Include.NON_NULL): está instruindo o Jackson a excluir quaisquer propriedades que tenham valor null durante o processo de serialização. Isso significa que, ao converter um objeto Java para JSON, 
+quaisquer campos que sejam null não serão incluídos na saída JSON.
