@@ -1,0 +1,46 @@
++---------------+
+| raNDoM        |
++---------------+
+
+@Mock: Cria um mock (objeto simulado) da classe ou interface anotada.
+Quando você precisa simular o comportamento de dependências para testar a lógica da classe sob teste.
+
+@InjectMocks: Cria uma instância da classe anotada e injeta os mocks criados (anotados com @Mock) nas dependências desta instância.
+
+@BeforeEach: Indica que o método anotado deve ser executado antes de cada método de teste.
+
+@ExtendWith(MockitoExtension.class): Extende a funcionalidade do JUnit 5 com o Mockito. É usada para habilitar o suporte ao Mockito nas classes de teste, permitindo a injeção de mocks e a inicialização correta deles.
+ - SpringExtension.class: É ideal para testes de integração, onde você quer testar a interação entre vários componentes ou testar a aplicação como um todo.
+   Permite o uso de anotações do Spring como @Autowired, @SpringBootTest, @MockBean, etc.
+   integração dos testes com o Spring Framework
+
+
+cenário de exceptions:
+@JsonInclude(JsonInclude.Include.NON_NULL): está instruindo o Jackson a excluir quaisquer propriedades que tenham valor null durante o processo de serialização. Isso significa que, ao converter um objeto Java para JSON, 
+quaisquer campos que sejam null não serão incluídos na saída JSON.
+
+O GlobalExceptionHandler é uma classe que centraliza o tratamento de exceções em uma aplicação Spring. Ele usa a anotação @RestControllerAdvice para fornecer conselhos globais a todos os controladores REST na aplicação. 
+Isso significa que qualquer exceção não tratada explicitamente por um controlador específico pode ser capturada e tratada de forma consistente e centralizada pelo GlobalExceptionHandler.
+@RestControllerAdvice: Anotação que indica que esta classe fornece tratamento de exceções para todos os controladores REST no projeto.
+
+
+
+Configuração Adicional do Logback (opcional)
+
+Se desejar ajustar a configuração do Logback para que os logs sejam gravados em um arquivo ou outras opções de configuração avançada, o arquivo logback.xml pode ser usado como referência:
+
+exemplo
+
+<configuration>
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <root level="info">
+        <appender-ref ref="STDOUT" />
+    </root>
+
+    <logger name="com.levi.microservices.product.service" level="debug" />
+</configuration>
