@@ -1,0 +1,44 @@
+can be broadly categorized as: compute,storage, bigdata and application services for web, mobile, analytics
+and back-end solutions
+
+- identify the purpose and value of Google Cloud products and services 
+- define how infrastructure is organized and controlled in google cloud
+- explain how to create a basic infra in google cloud
+- select and use google cloud storage options
+- describe the purpose and value of google kubernetes engine
+- identify the use cases for severless google cloud services
+- combine google cloud knowledge with prompt engineering to improve gemini responses
+
+
+#### Cloud Computing
+customers get computing resources that are on-demmand and self-service. through a web interface, users get
+the processing power, storage and networking they require, without a human intervation
+customers get access to those resources over the internet from anywhere they have a connection
+the cloud provider has a big pool of those resources and allocates them to users out of that pool
+rosources are elastic-which means they are flexible, so customers can be. if customers need more resources 
+they can get more, and quickly. if they need less, they can scale back
+and finally, customers pay only for what they use
+
+a container-based architecture-a fully automated, elastic third-wave cloud
+
+first wave -> colocation. renting phisycal space instead of investing in data center and colocation 
+facilities of decades past
+second wave -> virtualized data center. similar a colocation, private dc. enterprises still maintain
+the infra, but it also remains a user-controlled and user-configured environment. -> pq isso é ruim? 
+
+in the future, every company -regardless of size or industry- will differentiate itself from its 
+competitors through technology. that technology will be in form of software. great software is based
+on high-quality data -> every company is, or will eventually become, a data company
+
+#### Network
+each location is divided into several different regions and zones.
+regions represent independent geographic areas and are composed of zones.
+if you launch a virtual machione using compute engine it will run in the zone that you specify to
+ensure resource redundancy.
+você pode rodar recursos em diferentes regions. useful for bringing applications closer to  users 
+around the world, and also for protection in case tehere are issues with an entire region, say, due to 
+a natural disaster.
+
+spanner multi-region configurations allow you to replicate the db's data not just in multiple zones, but
+in multiple zones across multiple regions, as defined by the instance configuration
+
