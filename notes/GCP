@@ -1,3 +1,11 @@
++---------------+
+|    GCP        |
++---------------+
+
+GOOGLE CLOUD FUNDAMENTALS: CORE INFRA
+
+--------------------------------------------------------------------------------------------------------------------
+
 can be broadly categorized as: compute,storage, bigdata and application services for web, mobile, analytics
 and back-end solutions
 
@@ -42,3 +50,42 @@ a natural disaster.
 spanner multi-region configurations allow you to replicate the db's data not just in multiple zones, but
 in multiple zones across multiple regions, as defined by the instance configuration
 
+#### IAM
+to restrict who has access to what.
+
+There are three kinds of roles in IAM: basic, predefined, and custom.
+
+Basic roles are quite broad (mto amplo) in scope. When applied to a Google Cloud project, they affect all resources 
+in that project. Basic roles include owner, editor, viewer, and billing administrator.
+
+predefined roles. With Compute Engine, you can apply specific predefined roles—such as “instanceAdmin”—to Compute 
+Engine resources in a given project, a given folder, or an entire organization.
+
+custom roles. Many companies use a “least-privilege” model in which each person in your organization is given the 
+minimal amount of privilege needed to do their job. atenção. First, you’ll need to manage 
+the permissions that define the custom role you’ve created. Because of this, some organizations decide they’d rather use 
+the predefined roles. And second, custom roles can only be applied to either the project level or organization level. They 
+can’t be applied to the folder level.
+
+order these iam role types from broadest to finest-grained: basic roles, predefined roles, custom-roles
+
+
+#### Service accounts
+What if you want to give permissions to a Compute Engine virtual machine, rather than to a person?
+
+Well, that’s what service accounts are for.
+
+Let’s say you have an application running in a virtual machine that needs to store data in Cloud Storage, but you don’t want 
+anyone on the internet to have access to that data–just that particular virtual machine. 
+Service accounts are named with an email address, but instead of passwords they use cryptographic keys to access resources. 
+Fortunately, in addition to being an identity, a service account is also a resource, so 
+it can have IAM policies of its own attached to it.
+
+- the project id is immutable after creation, but can be changed during creation
+- services and apis are enabled on a per-project basis
+
+#### interacting with google cloud
+- google cloud console web-based interface
+- cloud sdk and cloud shell -all the tools within the cloud sdk located under the bin directory
+- other way is through APIs
+- the fourth way google cloud app
