@@ -41,7 +41,7 @@ on high-quality data -> every company is, or will eventually become, a data comp
 #### Network
 each location is divided into several different regions and zones.
 regions represent independent geographic areas and are composed of zones.
-if you launch a virtual machione using compute engine it will run in the zone that you specify to
+if you launch a virtual machine using compute engine it will run in the zone that you specify to
 ensure resource redundancy.
 você pode rodar recursos em diferentes regions. useful for bringing applications closer to  users 
 around the world, and also for protection in case tehere are issues with an entire region, say, due to 
@@ -73,6 +73,10 @@ order these iam role types from broadest to finest-grained: basic roles, predefi
 #### Service accounts
 What if you want to give permissions to a Compute Engine virtual machine, rather than to a person?
 
+Service Accounts são contas especiais no Google Cloud Platform (GCP) que são usadas para autenticar e autorizar aplicações 
+e máquinas virtuais (VMs) a usar recursos do Google Cloud. Elas diferem das contas de usuário normais, que são usadas para 
+representar pessoas.
+
 Well, that’s what service accounts are for.
 
 Let’s say you have an application running in a virtual machine that needs to store data in Cloud Storage, but you don’t want 
@@ -89,3 +93,11 @@ it can have IAM policies of its own attached to it.
 - cloud sdk and cloud shell -all the tools within the cloud sdk located under the bin directory
 - other way is through APIs
 - the fourth way google cloud app
+
+#### VMs and networks in the cloud
+
+with compute engine users can create and run VMs on google infra. there are no upfront investments. each vm contains
+the power and functionality of a fluu-fledged operating system. this means a vm can be configured much like a physical
+server by specifying the amount
+
+
