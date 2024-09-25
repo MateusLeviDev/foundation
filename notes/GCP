@@ -100,4 +100,18 @@ with compute engine users can create and run VMs on google infra. there are no u
 the power and functionality of a fluu-fledged operating system. this means a vm can be configured much like a physical
 server by specifying the amount
 
+#### Storage in the Cloud
+
+Cloud sql supports managed backups
+- compute engine instances can be authorized to access cloud sql instances and configure to cloud sql instance to be in the
+same zone as your vm
+supports tools like workbench, toad...
+consider using cloud storage if you need to store larger than 10 mb
+consider using cloud sql ou spanner if you need full sql support for an online trasanction processing system
+cloud sql is best for web frameworks and existing applications
+if cloud sql doesnt fit because you need horizontal scalability, consider using spanner, not replicas
+firestore is best for storing, syncing and queryng dara
+bigtable if you need to storage a large number of structured project. is best for analytical data.
+is possible to use one or several.
+
 
