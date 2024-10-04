@@ -2,7 +2,7 @@
 |    GCP        |
 +---------------+
 
-GOOGLE CLOUD FUNDAMENTALS: CORE INFRA
+GOOGLE CLOUD FUNDAMENTALS: CORE 
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -114,4 +114,35 @@ firestore is best for storing, syncing and queryng dara
 bigtable if you need to storage a large number of structured project. is best for analytical data.
 is possible to use one or several.
 
+#### google cloud engine != cloud functions != cloud run
 
+são opções de computação sem servidor. 
+
+o app engine é um PaaS. muita abstração no gerenciamento de infraestrutura. fornece um ambiente totalmente gerenciado para
+executar aplicativos. 
+- empacotar seu código em um artefato de implantação, que inclui o código do aplicativo, arquivos de configuração e dependências.
+artefato é então carregado no App Engine, que cuida do provisionamento e do gerenciamento da infraestrutura subjacente necessária 
+para executar o aplicativo. O App Engine dimensiona automaticamente o aplicativo com base na demanda
+- oferece serviços e recursos integrados que simplificam o desenvolvimento de aplicativos, como armazenamento de dados, cache e autenticação do usuário
+
+O Cloud Functions, por outro lado, é uma oferta de função como serviço (FaaS) que permite aos desenvolvedores escrever funções de finalidade 
+única que respondem a eventos. são acionados por eventos de várias origens. definem o evento que aciona a função. O código é implantado no Cloud 
+Functions, que gerencia automaticamente a infraestrutura necessária para executar a função. O Cloud Functions escala automaticamente com base no 
+número de eventos recebidos
+- foi projetado para computação sem servidor orientada a eventos. Ele se destaca na execução de funções pequenas e de propósito único em resposta a eventos específicos
+
+O Cloud Run é uma plataforma de computação totalmente gerenciada que permite aos desenvolvedores executar contêineres sem estado em um ambiente 
+sem servidor. Ele oferece suporte a aplicativos em contêiner criados usando tempos de execução de contêiner populares, como o Docker. Ao implantar 
+o código-fonte no Cloud Run, os desenvolvedores precisam criar uma imagem de contêiner que inclua o código do aplicativo, as dependências e qualquer 
+configuração necessária. Essa imagem de contêiner é então enviada para um registro de contêiner, como o Google Container Registry ou o Docker Hub. 
+O Cloud Run provisiona e dimensiona automaticamente a infraestrutura necessária
+- baseado em contêineres, oferece mais flexibilidade em termos de escolha de idioma e ambiente de tempo de execução em comparação com o App Engine e 
+o Cloud Functions. Ele permite que os desenvolvedores empacotem seus aplicativos usando sua linguagem e dependências preferidas. Isso facilita a migração 
+de aplicativos existentes para um ambiente sem servidor.
+- evolução mais recente do Google Cloud sem servidor. 
+
+----------------------------------------------------------------------------------------------------
+- App Engine: Escolha para aplicações complexas e serviços gerenciados
+- Cloud Functions: Ideal para funções leves e orientadas a eventos
+- Cloud Run: Melhor para aplicações em contêineres que exigem flexibilidade na linguagem e ambiente
+----------------------------------------------------------------------------------------------------
