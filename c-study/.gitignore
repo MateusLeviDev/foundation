@@ -1,6 +1,0 @@
-# Arquivos de saída compilados
-*.o
-*.out
-
-# Diretório de saída
-/output/
