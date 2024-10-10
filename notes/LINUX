@@ -1,0 +1,149 @@
++---------------+
+| LINUX         |
++---------------+
+
+@author: mateus levi souza
+------- xxxx xx xxx xxxxxx
+
+
+Kernel (Núcleo)
+==========
+
+what is, and what does it do?
+The kernel is the special piece of the operating system that controls 
+the CPU hardware, allocates memory, accesses data, schedules processes, 
+runs the applications, and protects them from each other. 
+It is the first program loaded on the computer when the computer starts up. 
+The most critical pieces of code in the kernel are loaded into protected 
+areas of memory so that they can't be overwritten by other applications running 
+in the operating system.
+
+The core of the UNIX system. Loaded at system start up (boot). Memory-resident 
+control program.
+
+- Manages the entire resources of the system, presenting them to you and every 
+other user as a coherent system. Provides service to user applications such as 
+device management, process scheduling, etc.
+
+em poucas palavras, é a matriz de qualquer sistema operacional. Em uma tradução 
+literal do termo, kernel significa núcleo, reforçando sua importância no 
+gerenciamento de informações e processos.
+
+- O kernel do windows, por exemplo, é o NT ou windows NT -
+- É o núcleo ou coração do sistema UNIX.
+- Carregado durante a inicialização do sistema (boot).
+- Permanece na memória durante todo o funcionamento do sistema.
+- Funciona como um programa de controle residente em memória.
+
+Types of Operation System 
+
+- Desktop OS: Microsoft Windows, macOS, Linux such as Ubuntu
+- Server OS: Windows server, Linux distributions like CentOS, RHEL
+- Mobile OS: iOS, Android
+- Embedded OS: Routers, smart TV, auto, home appliance
+- Real-time OS (RTOS): used in medical equipment, aerospace
+- O shell é um interpretador de comandos
+
+Operating system
+==========
+
+An operating system or OS is a software program that enables the 
+computer hardware to communicate and operate with the computer software.
+
+O SO é composto pelo kernel e por programas do sistema. O kernel é o 
+núcleo do sistema operacional, responsável por funções como gerenciamento 
+de processos, memória, drivers de dispositivos de hardware, entre outros. 
+Os programas do sistema utilizam as ferramentas fornecidas pelo kernel 
+para implementar os serviços necessários, enquanto aplicativos são destinados 
+a tarefas específicas do usuário.
+
+A principal distinção entre um sistema operacional e um kernel é se um 
+sistema  operacional é apenas um software de sistema que processa os 
+recursos do sistema, enquanto um kernel é um componente crítico (software) 
+dentro do sistema operacional. O kernel serve como um link entre o software 
+e o hardware da plataforma.
+
+An operating system performs these services for applications:
+- In a multitasking operating system where multiple programs can be running 
+at the same time, the operating system determines which applications should 
+run in what order and how much time should be allowed for each application 
+before giving another application a turn.
+- It manages the sharing of internal memory among multiple applications.
+- It handles input and output to and from attached hardware devices, such as 
+hard disks, printers, and dial-up ports.
+- It sends messages to each application or interactive user (or to a system 
+operator) about the status of operation and any errors that may have occurred.
+- It can offload the management of what are called batch jobs (for example, 
+printing) so that the initiating application is freed from this work.
+- On computers that can provide parallel processing, an operating system can 
+manage how to divide the program so that it runs on more than one processor at 
+a time.
+
+também explora o conceito de memória virtual, que é suportada pelo Linux. 
+A memória virtual usa o disco como uma extensão da RAM, permitindo que mais 
+memória seja utilizada. Partes da memória são gravadas no disco quando não 
+estão em uso e podem ser recuperadas quando necessário.
+
+ What is the Linux kernel?
+ - The kernel is the special piece of the operating system that controls 
+the CPU hardware, allocates memory, accesses data, schedules processes, 
+runs the applications, and protects them from each other. 
+
+What is an operating system?
+ - um OS incui, além do Kernel, uma série de utilitários, bibliotecas, 
+aplicativos e uma interface de usuário. Por exemplo: Windows (Kernel é 
+o Windows NT), Fedora (Kernel Linux). Em resumo, um OS permite a 
+comunicação entre o computer hardware e o computer software. Sem um OS
+o hardware se torna useless. 
+
+What’s the difference between user space and kernel space?
+ - o espaço do usuário é onde os programas de aplicativos são executados, 
+enquanto o espaço do kernel é onde o núcleo do sistema operacional reside 
+e opera, fornecendo serviços essenciais e controlando o hardware do sistema. 
+O acesso e os privilégios no espaço do kernel são mais elevados do que no 
+espaço do usuário, e o kernel geralmente protege o espaço do usuário para 
+garantir a segurança e estabilidade do sistema.
+
+How do I Log In to Linux?
+- you log in to Linux at either the console of the Linux host machine or 
+by remotely connecting to the Linux server over a network. no console, é
+como acessar a máquina virtual diretamente através da interface fornecida 
+pela AWS, por exemplo. login remoto via SSH é feito a partir do seu próprio 
+terminal de linha de comando, como o Terminal no macOS ou o PuTTY no Windows.
+- Most Linux servers are set up to allow users to connect via the network 
+using the Secure Shell (SSH), an encrypted communications protocol.
+- During installation, the root user is created, and you are able to select 
+a password. Post installation, administrators can use the root user account 
+and account management commands to create new user. The “superuser” username 
+in Linux is called “root” because it is the only user that can modify the 
+root directory.
+
+Files and Permissions
+-l /var/log/syslog:
+
+   david@debian:~$ ls -l /var/log/syslog
+   -rw-r----- 1 root adm 9074 May 15 10:17 /var/log/syslog
+
+The file is owned by the user “root” and the group “adm”. The file 
+permissions are “rw” (shorthand for read/write) for the owner and “r” 
+(shorthand for “read”) for the group with no permissions for anyone 
+else. Figure 2-2 shows how file permissions work in Linux.
+
+drwxr-xr-x 1 cumulus cumulus 154 May 16 09:15 cumulus
+
+d – directory
+r – read
+w – write
+x - execute
+
+drwxr-xr-x
+
+In the file permission, a “d” on the left tells you whether you are 
+looking at a directory (or folder). Then the three sets of permissions 
+“rwx, r-x, r-x” say whether you can read, write, and execute (or start 
+the application) at the user level, the group level, and the “everyone 
+else” level (others). The type indicator shown in Figure 2-2 identifies 
+the selected object as a directory, hence the “d” as the type. The two 
+most important types of objects in the Linux file system are directories 
+(“d”) and files (“-”). There are other possible types as well, but for my 
+purposes here, we’ll stick with directories and files.

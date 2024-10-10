@@ -1,0 +1,140 @@
+When you start up the computer, what is the first thing that happens?
+ - first execute the software that are in the BIOS
+ - check if the system is already to launch
+ - second loaded the boot loader (when the Kernel is loaded)
+ - Once the boot loader has identified and located the operating system kernel on the storage device, it loads the kernel into memory.
+BIOS -> basic input output system. basic a firmware 
+FIRMWARE -> comes default in a computer. a small chip stored in the motherboard. A ROM - read only memory. fornece instruções de baixo nível para o hardware do dispositivo, permitindo que ele execute suas funções básicas.
+BOOT LOADER -> The boot loader's primary task is to locate the operating system kernel (e.g., Linux kernel or Windows kernel) and load it into memory.
+
+What's a File System?
+ - a method or a DS that the OS uses to store and retrieve data in the memory. Most of file system use the concept of directories - also called folders. Everything in linux - even hardware (é representado principalmente por meio do sistema de arquivos virtual /proc e /sys) - is represented in this folder and file structure 
+ - examples: /bin, /sbin, /usr/bin, and /usr/sbin. → Where executable programs are stored. | /etc.  → Where configuration files are stored. | /home. → Where user home directories are stored, one for each user.
+Why is the file system an essential component?
+ - Organização e Estruturação dos Dados, Gerenciamento de Espaço em Disco, Recuperação de Dados e Tolerância a Falhas, etc
+
+Everything in linux is a file, even the commands
+
+What's a server?
+ - um computador ou sistema computacional dedicado. um servidor basicamente consiste em um serviço para responder as solicitações de clientes e prover os recursos necessários para a execução de suas operações.
+
+What's is bare metal?
+ - consiste em um servidor físico dedicado que é provisionado e usado por um único cliente. o cliente tem acesso direto ao hardware subjacente, sem a intermediação de uma camada de virtualização. ainda são uma escolha preferida para muitas empresas e organizações que têm requisitos específicos de desempenho, segurança e controle de hardware.
+
+Virtualization -> essa camada de virtulização se refere ao software (hypervisor) que permite que um único servidor físico seja dividido em múltiplos ambientes virtuais independentes
+Podemos abordar assim os namespaces nos processos de isolamento lógico and o firmware hypervisor que gerencia essas VMs criadas.
+
+CDK x API -> O CDK é ideal para definir e gerenciar infraestrutura na AWS usando código de programação, enquanto a AWS API é usada para interagir diretamente com os serviços da AWS através de solicitações HTTP, com mais controle e flexibilidade, porém com mais complexidade e necessidade de gerenciamento manual.
+
+chmod -> em sistemas Linux e outros sistemas UNIX são utilizadas para controlar o acesso a arquivos e diretórios por parte dos diferentes usuários do sistema. O comando chmod é usado para alterar essas permissões.
+ - cada arquivo ou diretório em um sistema UNIX possui três conjuntos de permissões
+ 1 - permissões de proprietário, 2 - permissões do grupo e 3 - permissões a outros usuários 
+ - As permissões r, w, e x correspondem a:
+    r (read): Permissão de leitura. Permite visualizar o conteúdo do arquivo ou listar o conteúdo do diretório. -> [4]
+    w (write): Permissão de escrita. Permite modificar o arquivo (editar, adicionar, excluir) ou criar e excluir arquivos em um diretório. -> [2]
+    x (execute): Permissão de execução. Permite executar o arquivo (se for um programa ou script) ou acessar um diretório. -> [1]
+por exemplo: chmod 777 <file> //da todas as permissões a todos; chmod 600 <file> /da permissão ao dono de ler e escrever sobre esse arquivo, mas não executar
+
+Acessar o AWS pelo console, uma possibilidade. Podemos também ter acesso a um servidor EC2 por meio do terminal usando o ssh + <arquivo .pem> nome_servidor@public_IP
+
+Why use shell script?
+ - faster
+ - automations 
+ - GUIs would make servers heavy, so shell commands are used
+ - O uso do shebang é uma maneira conveniente de especificar qual interpretador deve ser usado para executar um script
+ - o shebang permite que você escreva scripts que podem ser facilmente compartilhados e executados em diferentes sistemas Unix-like sem preocupações com a localização específica dos interpretadores nos diferentes sistemas.
+
+Difference between sh and Bash
+O sh e o bash são ambos interpretadores de shell utilizados em sistemas Unix-like
+o sh usa o conceito de fazer redirecionamentos
+For a long time, /bin/sh used to point to /bin/bash on most GNU/Linux systems. As a result, it had almost become safe to ignore the difference between the two. But that started to change recently.
+Some popular examples of systems where /bin/sh does not point to /bin/bash (and on some of which /bin/bash may not even exist) are:
+
+    Modern Debian and Ubuntu systems, which symlink sh to dash by default;
+    Busybox, which is usually run during the Linux system boot time as part of initramfs. It uses the ash shell implementation.
+    BSD systems, and in general any non-Linux systems. OpenBSD uses pdksh, a descendant of the KornShell. FreeBSD's sh is a descendant of the original Unix Bourne shell. Solaris has its own sh which for a long time was not POSIX-compliant; a free implementation is available from the Heirloom project.
+
+Which one to use
+some prefer sh, it is standardized, it is much simpler and easier to learn, it is portable across POSIX systems — even if they happen not to have bash, they are required to have sh
+If you run a script with bash the display way more useful error messages in the case of syntax error. You can simply save time by using bash. 
+em suma, /sh e /bash are the same, sh usa o mesmo conceito de redirecionar para outro shell, como Bash ou Dash. mas nao sao iguais por que alguns OS decidiram usar dash por default. 
+
+Git: version control. open source, distributed system
+GitHub: você pode organizar suas ações
+- ls -la você encontra o .git
+- ele basicamente faz o track do que esta rolando
+- ls .git
+- everything in git is tracked as objects
+- hocks → previne alguns casos de pessoas commitarem api tokens, por exemplo
+Difference between centralized (csv, svn) and distributed (git) version controls: em um sistema distribuídos podemos criar diversas cópias (fork), enquanto no centralizado não, nos distribuídos os desenvolvedores podem realizar operações rapidamente, mesmo offline, diferente do centralizado que precisa 
+estar conectado à rede. Nos sistemas centralizados como CVS e SVN, há um repositório central que mantém todas as versões do código-fonte, os merges poderiam se tornar bastante complexos. as pessoas não usam mais SVN por que se existe um único ponto de falhar isso vai falhar, pode ter certeza. 
+
+Docker: um PassS que faz virtualização em nível de sistema operacional. Baseado no LXC, conjunto de libs, tools e APIs para uso de containers no Linux.
+ - isolamento de memória, rede, CPU, etc... esse isolamento pode ser dividido em duas ideias: isolamento lógico (redes, processos, usuários) e isolamento de recursos (gerenciamento de recursos, CPU, memória, IO de rede ou IO de bloco), uma parte mais física.
+Essa separação, ou isolamento, é possível porque o Docker utiliza de dois recursos do Linux Kernel: 
+
+Isolamento lógico → names spaces
+
+Isolamento de recurso → cgroups
+
+ou seja, Os Namespaces e os cgroups são duas características fundamentais do Linux que o Docker (e outras tecnologias de contêineres) aproveita para criar ambientes isolados e gerenciar recursos de sistema.
+1. **Namespaces**:
+    - Os Namespaces fornecem um mecanismo para isolar e ocultar recursos do sistema operacional, criando instâncias virtuais desses recursos para processos específicos.
+    - Eles permitem que os processos em um namespace vejam apenas os recursos atribuídos a esse namespace, criando assim uma ilusão de que cada processo tem seu próprio espaço de sistema.
+    - Alguns dos principais namespaces usados no contexto de contêineres Docker são:
+        - **PID (Process ID)**: Isola os IDs de processo, de modo que os processos dentro de um contêiner não possam ver ou afetar os processos fora do contêiner.
+        - **Network**: Isola a pilha de rede, de modo que cada contêiner tenha seu próprio conjunto de interfaces de rede, tabelas de roteamento e afins.
+        - **IPC (Inter Process Communication)**: Isola os mecanismos de comunicação entre processos, como filas de mensagens e semáforos, garantindo que apenas processos do mesmo contêiner possam interagir.
+        - **Mount**: Isola o sistema de arquivos, permitindo que cada contêiner tenha seu próprio sistema de arquivos raiz e montagens específicas.
+        - **UTS (Unix Timesharing System)**: Isola o hostname e o domínio de nomes do sistema.
+    - Esses namespaces ajudam a garantir que os contêineres sejam isolados uns dos outros e do host, proporcionando uma camada de segurança e confiabilidade.
+2. **cgroups (Control Groups)**:
+    - Os cgroups permitem o controle e a limitação dos recursos do sistema, como CPU, memória, E/S de disco e largura de banda de rede, entre outros.
+    - Eles dividem os recursos do sistema em grupos, permitindo que os administradores imponham políticas de alocação e limitação de recursos em cada grupo.
+    - No contexto do Docker, os cgroups são usados para garantir que cada contêiner tenha acesso apenas aos recursos alocados a ele e não possa monopolizar os recursos do sistema.
+    - Por exemplo, você pode definir limites de memória para cada contêiner, garantindo que nenhum deles use mais memória do que o permitido.
+    - Os cgroups são essenciais para garantir a previsibilidade e o desempenho em ambientes de contêineres, onde várias cargas de trabalho podem estar sendo executadas em um único host.
+
+O que é um container?
+ - em um contexto genérico, são pacotes de software que contêm todos os elementos necessários (cod, runtime, tools) para serem executados em qualquer ambiente. Dessa forma, os contêineres virtualizam o sistema operacional e são executados em qualquer lugar, desde um data center privado até a nuvem pública ou até mesmo no laptop pessoal de um desenvolvedor
+ - um container Docker sempre é construído a partir de uma imagem Docker. <---
+ - como dito anteriormente: Os contêineres são projetados para fornecer isolamento, portabilidade e eficiência na implantação de aplicativos.
+ - outras tecnologias de contêineres, como: LXC, Podman, OpenVZ, rkt (Rocket)
+
+Contêineres vs. VMs
+Você já deve estar familiarizado com VMs: um sistema operacionalconvidado, como Linux ou Windows, é executado em cima de um sistema operacionalhost com acesso ao hardware subjacente.Os contêineres costumam ser comparados com máquinas virtuais (VMs). Assim como as máquinas virtuais, os contêineres permitem empacotar o aplicativo com bibliotecas e outras dependências,oferecendo ambientes isolados para executar os serviços de software. Como você verá abaixo, são apenas essas as semelhanças.Isso porque os contêineres fornecem uma unidade muito mais leve para desenvolvedores e equipes de operações de TI trabalharem, oferecendo uma infinidade devantagens.
+
+- Os contêineres são muito mais leves do que as VMs
+- Os contêineres virtualizam no nível do sistema operacional enquanto as VMs virtualizam no nível do hardware
+- o docker criou uma interface mais amigável para lidar com isso. com um cli - apiRest (o Docker Daemon fornece uma interface de comunicação por meio de uma API REST que permite o gerenciamento programático e automatizado de contêineres e outros recursos do Docker. ) - dockerfiles se comunicam com a docker engine
+- Os contêineres compartilham o kernel do sistema operacional e usam uma pequena parte da memória que as VMs exigem
+
+Isso significa que os contêineres compartilham o mesmo kernel (núcleo) do sistema operacional hospedeiro. Os contêineres são leves, pois não precisam de um sistema operacional completo separado; eles compartilham recursos do sistema operacional host.
+As VMs virtualizam no nível do hardware. Cada VM opera como uma máquina completa e independente dentro do sistema hospedeiro. Cada VM possui seu próprio sistema operacional, incluindo um kernel dedicado.
+a diferença fundamental entre contêineres e VMs está no nível de virtualização: os contêineres compartilham o kernel do sistema operacional hospedeiro, enquanto as VMs têm seu próprio sistema operacional virtualizado, incluindo um kernel dedicado. Esta diferença influencia significativamente o desempenho, a eficiência de recursos e o nível de isolamento entre os ambientes de execução.
+compartilhar o kernel do sistema operacional hospedeiro entre os contêineres traz várias vantagens em termos de eficiência e desempenho: Uso Eficiente de Recursos, Inicialização Rápida, Menor Sobrecarga de Gerenciamento.
+as máquinas virtuais (VMs) são preferíveis em situações onde é necessário um isolamento completo entre aplicativos e sistemas operacionais, flexibilidade na escolha do sistema operacional, gerenciamento dedicado de recursos e suporte avançado para migração e tolerância a falhas. Embora sejam mais pesadas em termos de recursos do que os contêineres, as VMs continuam sendo uma tecnologia fundamental em muitos ambientes de TI, especialmente para cargas de trabalho que exigem níveis mais altos de isolamento e separação.
+O ganho óbvio disso é a capacidade de rodar mais containers em um único host, se comparado com a quantidade que se conseguiria com máquinas virtuais.
+Toda lógica de computação em nuvem é baseada no uso de VMs. 
+
+Imagem
+A principal diferença entre uma imagem e um contêiner do Docker é que uma imagem é um arquivo e um contêiner é um processo.
+Uma imagem é um pacote de sistema de arquivos que contém todas as dependências necessárias para executar um processo. Ela inclui o código, as bibliotecas, as dependências e as configurações. Uma imagem é um modelo de um aplicativo ou serviço que pode ser executado em um contêiner.
+Um contêiner é uma instância de uma imagem**. Ele é um processo que executa o código da imagem em um ambiente isolado. O contêiner tem seu próprio sistema de arquivos, rede e processos.
+dessa forma, uma imagem contém 1 ou mais containers
+
+What is DDD?
+consiste no desenvolvimento cujo design é centrado no domínio do negócio. 
+-> permitir o desenvolvimento de sistemas cujo design é centrado em conceitos próximos e alinhados com um domínio de negócio.
+- DDD defende que a separação entre domínio e tecnologia deve ser promovida e expressa na arquitetura do sistema. Para tanto, padrões como Arquitetura em Camadas, Arquitetura Limpa ou Arquitetura Hexagonal podem ser usados. (isso é uma excelente pergunta)
+
+busquei muito entender pelo código, mas seria algo mais filosófico, de fato
+- diminuir a distância entre o que o negócio fala e o que a galera técnica fala. ser algo mais intuitivo.
+- o software se desenvolve no contexto em que estamos inseridos
+
+building blocks -> 
+- Entidades
+- Objetos de Valor
+- Serviços
+- Agregados
+- Repositórios

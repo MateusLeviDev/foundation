@@ -1,0 +1,148 @@
++---------------+
+|    GCP        |
++---------------+
+
+GOOGLE CLOUD FUNDAMENTALS: CORE 
+
+--------------------------------------------------------------------------------------------------------------------
+
+can be broadly categorized as: compute,storage, bigdata and application services for web, mobile, analytics
+and back-end solutions
+
+- identify the purpose and value of Google Cloud products and services 
+- define how infrastructure is organized and controlled in google cloud
+- explain how to create a basic infra in google cloud
+- select and use google cloud storage options
+- describe the purpose and value of google kubernetes engine
+- identify the use cases for severless google cloud services
+- combine google cloud knowledge with prompt engineering to improve gemini responses
+
+
+#### Cloud Computing
+customers get computing resources that are on-demmand and self-service. through a web interface, users get
+the processing power, storage and networking they require, without a human intervation
+customers get access to those resources over the internet from anywhere they have a connection
+the cloud provider has a big pool of those resources and allocates them to users out of that pool
+rosources are elastic-which means they are flexible, so customers can be. if customers need more resources 
+they can get more, and quickly. if they need less, they can scale back
+and finally, customers pay only for what they use
+
+a container-based architecture-a fully automated, elastic third-wave cloud
+
+first wave -> colocation. renting phisycal space instead of investing in data center and colocation 
+facilities of decades past
+second wave -> virtualized data center. similar a colocation, private dc. enterprises still maintain
+the infra, but it also remains a user-controlled and user-configured environment. -> pq isso é ruim? 
+
+in the future, every company -regardless of size or industry- will differentiate itself from its 
+competitors through technology. that technology will be in form of software. great software is based
+on high-quality data -> every company is, or will eventually become, a data company
+
+#### Network
+each location is divided into several different regions and zones.
+regions represent independent geographic areas and are composed of zones.
+if you launch a virtual machine using compute engine it will run in the zone that you specify to
+ensure resource redundancy.
+você pode rodar recursos em diferentes regions. useful for bringing applications closer to  users 
+around the world, and also for protection in case tehere are issues with an entire region, say, due to 
+a natural disaster.
+
+spanner multi-region configurations allow you to replicate the db's data not just in multiple zones, but
+in multiple zones across multiple regions, as defined by the instance configuration
+
+#### IAM
+to restrict who has access to what.
+
+There are three kinds of roles in IAM: basic, predefined, and custom.
+
+Basic roles are quite broad (mto amplo) in scope. When applied to a Google Cloud project, they affect all resources 
+in that project. Basic roles include owner, editor, viewer, and billing administrator.
+
+predefined roles. With Compute Engine, you can apply specific predefined roles—such as “instanceAdmin”—to Compute 
+Engine resources in a given project, a given folder, or an entire organization.
+
+custom roles. Many companies use a “least-privilege” model in which each person in your organization is given the 
+minimal amount of privilege needed to do their job. atenção. First, you’ll need to manage 
+the permissions that define the custom role you’ve created. Because of this, some organizations decide they’d rather use 
+the predefined roles. And second, custom roles can only be applied to either the project level or organization level. They 
+can’t be applied to the folder level.
+
+order these iam role types from broadest to finest-grained: basic roles, predefined roles, custom-roles
+
+
+#### Service accounts
+What if you want to give permissions to a Compute Engine virtual machine, rather than to a person?
+
+Service Accounts são contas especiais no Google Cloud Platform (GCP) que são usadas para autenticar e autorizar aplicações 
+e máquinas virtuais (VMs) a usar recursos do Google Cloud. Elas diferem das contas de usuário normais, que são usadas para 
+representar pessoas.
+
+Well, that’s what service accounts are for.
+
+Let’s say you have an application running in a virtual machine that needs to store data in Cloud Storage, but you don’t want 
+anyone on the internet to have access to that data–just that particular virtual machine. 
+Service accounts are named with an email address, but instead of passwords they use cryptographic keys to access resources. 
+Fortunately, in addition to being an identity, a service account is also a resource, so 
+it can have IAM policies of its own attached to it.
+
+- the project id is immutable after creation, but can be changed during creation
+- services and apis are enabled on a per-project basis
+
+#### interacting with google cloud
+- google cloud console web-based interface
+- cloud sdk and cloud shell -all the tools within the cloud sdk located under the bin directory
+- other way is through APIs
+- the fourth way google cloud app
+
+#### VMs and networks in the cloud
+
+with compute engine users can create and run VMs on google infra. there are no upfront investments. each vm contains
+the power and functionality of a fluu-fledged operating system. this means a vm can be configured much like a physical
+server by specifying the amount
+
+#### Storage in the Cloud
+
+Cloud sql supports managed backups
+- compute engine instances can be authorized to access cloud sql instances and configure to cloud sql instance to be in the
+same zone as your vm
+supports tools like workbench, toad...
+consider using cloud storage if you need to store larger than 10 mb
+consider using cloud sql ou spanner if you need full sql support for an online trasanction processing system
+cloud sql is best for web frameworks and existing applications
+if cloud sql doesnt fit because you need horizontal scalability, consider using spanner, not replicas
+firestore is best for storing, syncing and queryng dara
+bigtable if you need to storage a large number of structured project. is best for analytical data.
+is possible to use one or several.
+
+#### google cloud engine != cloud functions != cloud run
+
+são opções de computação sem servidor. 
+
+o app engine é um PaaS. muita abstração no gerenciamento de infraestrutura. fornece um ambiente totalmente gerenciado para
+executar aplicativos. 
+- empacotar seu código em um artefato de implantação, que inclui o código do aplicativo, arquivos de configuração e dependências.
+artefato é então carregado no App Engine, que cuida do provisionamento e do gerenciamento da infraestrutura subjacente necessária 
+para executar o aplicativo. O App Engine dimensiona automaticamente o aplicativo com base na demanda
+- oferece serviços e recursos integrados que simplificam o desenvolvimento de aplicativos, como armazenamento de dados, cache e autenticação do usuário
+
+O Cloud Functions, por outro lado, é uma oferta de função como serviço (FaaS) que permite aos desenvolvedores escrever funções de finalidade 
+única que respondem a eventos. são acionados por eventos de várias origens. definem o evento que aciona a função. O código é implantado no Cloud 
+Functions, que gerencia automaticamente a infraestrutura necessária para executar a função. O Cloud Functions escala automaticamente com base no 
+número de eventos recebidos
+- foi projetado para computação sem servidor orientada a eventos. Ele se destaca na execução de funções pequenas e de propósito único em resposta a eventos específicos
+
+O Cloud Run é uma plataforma de computação totalmente gerenciada que permite aos desenvolvedores executar contêineres sem estado em um ambiente 
+sem servidor. Ele oferece suporte a aplicativos em contêiner criados usando tempos de execução de contêiner populares, como o Docker. Ao implantar 
+o código-fonte no Cloud Run, os desenvolvedores precisam criar uma imagem de contêiner que inclua o código do aplicativo, as dependências e qualquer 
+configuração necessária. Essa imagem de contêiner é então enviada para um registro de contêiner, como o Google Container Registry ou o Docker Hub. 
+O Cloud Run provisiona e dimensiona automaticamente a infraestrutura necessária
+- baseado em contêineres, oferece mais flexibilidade em termos de escolha de idioma e ambiente de tempo de execução em comparação com o App Engine e 
+o Cloud Functions. Ele permite que os desenvolvedores empacotem seus aplicativos usando sua linguagem e dependências preferidas. Isso facilita a migração 
+de aplicativos existentes para um ambiente sem servidor.
+- evolução mais recente do Google Cloud sem servidor. 
+
+----------------------------------------------------------------------------------------------------
+- App Engine: Escolha para aplicações complexas e serviços gerenciados
+- Cloud Functions: Ideal para funções leves e orientadas a eventos
+- Cloud Run: Melhor para aplicações em contêineres que exigem flexibilidade na linguagem e ambiente
+----------------------------------------------------------------------------------------------------
