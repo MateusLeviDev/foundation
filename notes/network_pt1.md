@@ -1,18 +1,22 @@
-O que é um IP Address? Basicamente o ID do host. Designed em 32 bits (4 bytres), representado por four octets de (0-255). 2³²
-O que é um host, portanto? Any device wich sends or receive traffic (over a network). any IoT devide (geladeira, smart watches, speakers...)
-O que é uma network? Logical grouping of hosts (similar connectivity). a network is what transport traffic between hosts. 
-Uma network pode conter outra network? Sim, esse é o conceito de subnetting. parte de uma big network. mais segurança no isolamento
-Routers: facilitate communication between networks
-Switches: facilitate communication within a network
+- O que é um IP Address? Basicamente o ID do host. Designed em 32 bits (4 bytres), representado por four octets de (0-255). 2³²
+
+- O que é um host, portanto? Any device wich sends or receive traffic (over a network). any IoT devide (geladeira, smart watches, speakers...)
+
+- O que é uma network? Logical grouping of hosts (similar connectivity). a network is what transport traffic between hosts. 
+
+- Uma network pode conter outra network? Sim, esse é o conceito de subnetting. parte de uma big network. mais segurança no isolamento
+ 
+- Routers: facilitate communication between networks
+- Switches: facilitate communication within a network
 Ou seja, switch conecta dispositivos dentro de uma mesma LAN e o router conecta seu PC ao servidor do google, por exmeplo. 
-O que é um servidor? um computador ou sistema computacional dedicado. um servidor basicamente consiste em um serviço para responder as 
+ - O que é um servidor? um computador ou sistema computacional dedicado. um servidor basicamente consiste em um serviço para responder as 
    solicitações de clientes e prover os recursos necessários para a execução de suas operações.
 
 - internet nothing more than a bunch of diff routers
 - create the hierarchy in networks and the entire internet
 
 
-How packets move through the internet?
+#### How packets move through the internet?
 
 Imagine a scenario where two hosts are communicating over a network. On one side, a host runs an application that generates data which needs to be sent to the other host. 
 To prepare this data for transmission, a process known as encapsulation begins. First, the data reaches the transport layer (Layer 4), which wraps it with a TCP header. 
