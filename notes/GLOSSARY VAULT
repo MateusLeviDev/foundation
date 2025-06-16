@@ -117,6 +117,9 @@ as máquinas virtuais (VMs) são preferíveis em situações onde é necessário
 O ganho óbvio disso é a capacidade de rodar mais containers em um único host, se comparado com a quantidade que se conseguiria com máquinas virtuais.
 Toda lógica de computação em nuvem é baseada no uso de VMs. 
 
+- VMs virtualizam hardware.porque o hypervisor cria uma cópia virtual do hardware físico (CPU, memória, disco, etc), permitindo que cada VM rode seu próprio sistema operacional completo. Isolamento Forte (nível hardware)
+- Containers virtualizam o sistema operacional. Containers compartilham o mesmo kernel do SO host. Isolamento Bom (nível processo).
+
 Imagem
 A principal diferença entre uma imagem e um contêiner do Docker é que uma imagem é um arquivo e um contêiner é um processo.
 Uma imagem é um pacote de sistema de arquivos que contém todas as dependências necessárias para executar um processo. Ela inclui o código, as bibliotecas, as dependências e as configurações. Uma imagem é um modelo de um aplicativo ou serviço que pode ser executado em um contêiner.
