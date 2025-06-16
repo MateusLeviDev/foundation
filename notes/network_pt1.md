@@ -28,8 +28,9 @@ It adds the MAC addresses of both the source and the next hop (which could be th
 Finally, at the physical layer (Layer 1), the entire frame is converted into a stream of bits—electrical signals, light pulses, or radio waves—that are transmitted over the physical medium, such as an Ethernet cable or a Wi-Fi connection.
 Once the frame reaches the other host, the process is reversed through decapsulation. The bits are interpreted and reassembled into a frame, from which the packet is extracted. 
 The network layer then retrieves the segment, and finally, the transport layer delivers the original application data to the appropriate service.
+---
 
-
+Seu PC envia o pacote para o roteador local na sua casa, via Wi-Fi ou cabo. roteador da sua casa encaminha o pacote para o próximo roteador, que geralmente pertence ao (ISP). passa por vários roteadores que conectam redes maiores. finalmente o pacote chega ao roteador que conecta ao servidor
 
 
 ---
